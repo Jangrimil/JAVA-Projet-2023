@@ -9,7 +9,7 @@ public class Wand {
         Core TypeWang[]= Core.values();
         String choose_TWang;
         do {
-            System.out.println("What your preference ? :\n 1: PHOENIX_FEATHER 2: DRAGON_HEARTSTRING");            //Essayer de mettre une condition
+            System.out.println("What your preference ? :\n" +TypeWang);            //Essayer de mettre une condition
             x = scanner.nextInt();
         } while (x<=0 || x>=3);
 
