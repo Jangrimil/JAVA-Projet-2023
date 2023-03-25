@@ -145,7 +145,7 @@ public class Main {
             } else {
                 String House = "Hufflepuff";
                 SortingHat HouseWizzard = new SortingHat(House);
-                System.out.println("You belong to " +HouseWizzard.getHouse()+ " House\nNotable members include Newt Scamander, Cedric Diggory and Nymphadora Tonks.\n\n‘You might belong in Hufflepuff\nWhere they are just and loyal\nThose patient Hufflepuffs are true\nAnd unafraid of toil.’\nHarry Potter and the Philosopher’s Stone");
+                System.out.println("You belong to " +HouseWizzard.getHouse()+ " House\nNotable members include Newt Scamander, Cedric Diggory and Nymphadora Tonks.\n\n‘You might belong in Hufflepuff\nWhere they are just and loyal\nThose patient Hufflepuffs are true\nAnd unafraid of toil.’\nHarry Potter and the Philosopher’s Stone <3");
             }
 
             /// Pet
