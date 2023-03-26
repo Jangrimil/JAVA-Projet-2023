@@ -12,8 +12,28 @@ public class Spell extends AbstractSpell {
             System.out.println(Spellchoosen[Spellchoose]);
         }
         else if (Wizzard.xp >= 20){
-            //for ( )
+            //for(SortingHat ) //(Grinfondor épéee autre Acio)
             Spellchoose = 2;
+            System.out.println(Spellchoosen[Spellchoose]);
+        }else if (Wizzard.xp >= 30){
+            //for ( )
+            Spellchoose = 3;
+            System.out.println(Spellchoosen[Spellchoose]);
+        }else if (Wizzard.xp >= 40){
+            //for ( )
+            Spellchoose = 4;
+            System.out.println(Spellchoosen[Spellchoose]);
+        }else if (Wizzard.xp >= 50){
+            //for ( )
+            Spellchoose = 5;
+            System.out.println(Spellchoosen[Spellchoose]);
+        }else if (Wizzard.xp >= 60){
+            //for ( )
+            Spellchoose = 6;
+            System.out.println(Spellchoosen[Spellchoose]);
+        }else if (Wizzard.xp >= 70){
+            //for ( )
+            Spellchoose = 7;
             System.out.println(Spellchoosen[Spellchoose]);
         }
         return 0;
