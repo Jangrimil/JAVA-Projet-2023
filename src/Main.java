@@ -3,17 +3,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+
+        String House = null;
+        String Core_Wand = null;
+        int NbWand = 0;
         /// Define NAME of the Witcher
         System.out.println("Define your Witcher name ");
         Scanner scanner = new Scanner(System.in);
         String Name = scanner.nextLine();
-        Wizzard AttributWizzard = new Wizzard(Name, null, null, null, 0);
-        System.out.println("Hello ! " + AttributWizzard.getName());
+        Wizzard Wizzard = new Wizzard(Name, null, House, Core_Wand, NbWand);
+        System.out.println("Hello ! " +Wizzard.getName());
 
 
         /// Define WANd of the Witcher
-        int NbWand;
-        String Core_Wand;
         do {
             do {
                 System.out.println("Give a number for your Wand into 1 and 9");
@@ -22,7 +24,7 @@ public class Main {
         } while (NbWand >= 9);
 
         //Core[] TypeWand = Core.values();
-
+        //Core core = Core.Core;
         System.out.println("What is your preference ? :\n");
         for (Core core : Core.values()) {
             System.out.println((core.ordinal() + 1) + " - " + core.name());
@@ -43,12 +45,11 @@ public class Main {
             Core_Wand = "Dragon Heather";
             Wand WizzardWand = new Wand(Core_Wand, NbWand);
             System.out.println("Information about your Wang : ELEMENT = " + WizzardWand.getCore_Wang() + " and LENGTH : " + WizzardWand.getNbWand());
-            Wizzard AttributWand = new Wizzard(Name, null, null, Core_Wand, NbWand);
+            //Wizzard = Wizzard(Name, Pet, House, Core_Wand, NbWand);
         }
 
         // Define House of Wizzard
 
-        String House;
         Scanner sc = new Scanner(System.in);
         int countA = 0;
         int countB = 0;
@@ -131,22 +132,22 @@ public class Main {
             House = "Ravenclaw";
             SortingHat HouseWizzard = new SortingHat(House);
             System.out.println("You belong to " + HouseWizzard.getHouse() + " House\nNotable members include Luna Lovegood, Gilderoy Lockhart and Filius Flitwick.\n\n‘Or yet in wise old Ravenclaw\nIf you’ve a ready mind\nWhere those of wit and learning\nWill always find their kind.’\nHarry Potter and the Philosopher’s Stone");
-            Wizzard AttributWand = new Wizzard(Name, null, House, Core_Wand, NbWand);
+            //Wizzard = Wizzard(Name, null, House, Core_Wand, NbWand);
         } else if (countB > countA && countB > countC && countB > countD) {
             House = "Slytherin";
             SortingHat HouseWizzard = new SortingHat(House);
             System.out.println("You belong to " + HouseWizzard.getHouse() + " House\nNotable members include Severus Snape, Draco Malfoy and (rather unfortunately) Lord Voldemort.\n\n‘Or perhaps in Slytherin\nYou’ll make your real friends\nThose cunning folk use any means\nTo achieve their ends.’\nHarry Potter and the Philosopher’s Stone");
-            Wizzard AttributWand = new Wizzard(Name, null, House, Core_Wand, NbWand);
+            //Wizzard = Wizzard(Name, null, House, Core_Wand, NbWand);
         } else if (countC > countA && countC > countB && countC > countD) {
             House = "Gryffindor";
             SortingHat HouseWizzard = new SortingHat(House);
             System.out.println("You belong to " + HouseWizzard.getHouse() + " House\nNotable members include (of course) Harry Potter, Hermione Granger and Ron Weasley.\n\n‘You might belong in Gryffindor,\nWhere dwell the brave at heart,\nTheir daring, nerve and chivalry\nSet Gryffindors apart.’\nHarry Potter and the Philosopher’s Stone");
-            Wizzard AttributWand = new Wizzard(Name, null, House, Core_Wand, NbWand);
+            //Wizzard = Wizzard(Name, null, House, Core_Wand, NbWand);
         } else {
             House = "Hufflepuff";
             SortingHat HouseWizzard = new SortingHat(House);
             System.out.println("You belong to " + HouseWizzard.getHouse() + " House\nNotable members include Newt Scamander, Cedric Diggory and Nymphadora Tonks.\n\n‘You might belong in Hufflepuff\nWhere they are just and loyal\nThose patient Hufflepuffs are true\nAnd unafraid of toil.’\nHarry Potter and the Philosopher’s Stone <3");
-            Wizzard AttributWand = new Wizzard(Name, null, House, Core_Wand, NbWand);
+            //Wizzard = Wizzard(Name, null, House, Core_Wand, NbWand);
         }
 
         /// Pet
@@ -162,21 +163,26 @@ public class Main {
 
         if (petchoix == Pet.cat) {
             String Pet = "Cat";
-            Wizzard AttributWand = new Wizzard(Name, Pet, House, Core_Wand, NbWand);
-            System.out.println("The chosen animal " + AttributWand.getPet());
+             Wizzard = new Wizzard(Name, Pet, House, Core_Wand, NbWand);
+            System.out.println("The chosen animal " + Wizzard.getPet());
         } else if (petchoix == Pet.Owl) {
             String Pet = "Owl";
-            Wizzard AttributWand = new Wizzard(Name, Pet, House, Core_Wand, NbWand);
-            System.out.println("The chosen animal " + AttributWand.getPet());
+             Wizzard = new Wizzard(Name, Pet, House, Core_Wand, NbWand);
+            System.out.println("The chosen animal " + Wizzard.getPet());
         } else if (petchoix == Pet.Rat) {
             String Pet = "Rat";
-            Wizzard AttributWand = new Wizzard(Name, Pet, House, Core_Wand, NbWand);
-            System.out.println("The chosen animal " + AttributWand.getPet());
+             Wizzard = new Wizzard(Name, Pet, House, Core_Wand, NbWand);
+            System.out.println("The chosen animal " + Wizzard.getPet());
         } else if (petchoix == Pet.Toad) {
             String Pet = "Toad";
-            Wizzard AttributWand = new Wizzard(Name, Pet, House, Core_Wand, NbWand);
-            System.out.println("The chosen animal " + AttributWand.getPet());
+             Wizzard = new Wizzard(Name, Pet, House, Core_Wand, NbWand);
+            System.out.println("The chosen animal " + Wizzard.getPet());
         }
+        System.out.println(Wizzard);
+        Main.checkAct();
+        Main.getcheckAct();
+        Main.Chap1();
+
 
         /// Spell
 
@@ -238,20 +244,10 @@ public class Main {
         return act;
     }
 
-    public class Combat {
-        public static Wizzard Wizzard;
-        public static Enemy Enemy;
-        static boolean end;
 
-        public Combat(Wizzard Wizzard, Enemy Enemy) {
-            this.Wizzard = Wizzard;
-            this.Enemy = Enemy;
-            this.end = false;
-
-        }
-    }
 
     public static void Chap1() {
+        boolean end = false;
         checkAct();
         Spell.AddSpell();
         Enemy Troll = new Enemy("Troll",100, 50);
@@ -266,10 +262,11 @@ public class Main {
             String choose = scanner.nextLine();
             if (choose.equals("Wingardium Leviosa")) {
                 Wizzard.spell();
+
             } else if (choose.equals("potion")) {
-                System.out.println("You can't use potion you have" + Wizzard.getMaxhp());
+                System.out.println(" You can't use potion you have " + Wizzard.getMaxhp());
                 Enemy.attack();
-                System.out.println("Vous avez perdu" + Wizzard.hp + "il vous reste" + Wizzard.Maxhp);
+                System.out.println(" Vous avez perdu " + Wizzard.hp + " il vous reste " + Wizzard.Maxhp);
             } else {
                 Wizzard.spell();
                 System.out.println("Vous avez infligez" + Troll.maxHp + "il vous reste" + Wizzard.Maxhp);
@@ -277,7 +274,7 @@ public class Main {
         } while (Enemy.Alive());
         if (Enemy.Alive()){
             System.out.println(Wizzard.getName() + " a gagné !");
-            boolean end = true;
+            end = true;
             return;
         } else {
 

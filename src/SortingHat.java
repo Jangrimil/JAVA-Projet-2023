@@ -11,10 +11,7 @@ public class SortingHat {
 
     public SortingHat(String House){
         this.House = House;
-        this.Ravenclaw = Ravenclaw;
-        this.Slytherin = Slytherin;
-        this.Gryffindor = Gryffindor;
-        this.Hufflepuff = Hufflepuff;
+
     }
 
     public String getHouse(){

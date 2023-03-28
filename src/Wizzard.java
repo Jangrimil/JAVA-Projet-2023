@@ -18,12 +18,15 @@ public class Wizzard extends Character{
     public Wizzard(String Name, String Pet, String House, String Core_Wand, int NbWand ){
 
         super(Name, Pet, 100, 10 );      //name, maxHp, xp
+        this.Name = Name;
+        this.Pet = Pet;
         this.House = House;
         this.Core_Wand = Core_Wand;
         this.NbWand = NbWand;
     }
 
     public static String getName() {
+
         return Name;
     }
 
@@ -33,9 +36,7 @@ public class Wizzard extends Character{
     //    if (house == Slytherin)
     //}
 
-    public String getPet(){
-        return Pet;
-    }
+    public String getPet(){return Pet;}
 
 
    //   Setter and Getter of hp Wizzard
