@@ -3,9 +3,7 @@ public abstract class Character {
     // Variables / Attributes all characters have
     public String name;
     public String Pet;
-    public int maxHp;
-    public int hp;
-    public static int xp;
+    public static int maxHp, hp, xp;
 
     // Constructor for character
     public Character(String name, String Pet, int maxHp, int xp){
@@ -18,6 +16,5 @@ public abstract class Character {
 
 
     //methods every character has
-    public abstract int spell();
-    public abstract int potion();
+    public abstract int defend();
 }

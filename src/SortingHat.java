@@ -2,14 +2,36 @@ import java.util.Scanner;
 
 public class SortingHat {
 
-    public String House;
+    public static String SortingHat;
+    public static String House;
+    public static String Ravenclaw;
+    public static String Slytherin;
+    public static String Gryffindor;
+    public static String Hufflepuff;
 
     public SortingHat(String House){
         this.House = House;
+        this.Ravenclaw = Ravenclaw;
+        this.Slytherin = Slytherin;
+        this.Gryffindor = Gryffindor;
+        this.Hufflepuff = Hufflepuff;
     }
 
     public String getHouse(){
         return House;
     }
 
+    public String getRavenclaw(){
+        return Ravenclaw;
     }
+    public String getSlytherin(){
+        return Slytherin;
+    }
+    public String getGryffindor(){
+        return Gryffindor;
+    }
+    public String Hufflepuff(){
+        return Hufflepuff;
+    }
+
+}

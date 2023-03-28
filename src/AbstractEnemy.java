@@ -11,6 +11,9 @@ public abstract class AbstractEnemy {
     }
 
     //methods every character has
-    public abstract int attack();
+    public static int attack() {
+        return 0;
+    }
+
     public abstract int defend();
 }

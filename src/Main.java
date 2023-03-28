@@ -192,40 +192,96 @@ public class Main {
         if (Wizzard.xp >= 10 && act == 1) {
             act = 2;
             place = 1;
+            System.out.println("-------------------------------------");
             System.out.println(places[place]);
-
-            //spell
-            //potion
+            System.out.println("-------------------------------------");
         } else if (Wizzard.xp >= 20 && act == 2) {
             act = 3;
             place = 2;
+            System.out.println("-------------------------------------");
             System.out.println(places[place]);
+            System.out.println("-------------------------------------");
         } else if (Wizzard.xp >= 30 && act == 3) {
             act = 4;
             place = 3;
+            System.out.println("-------------------------------------");
             System.out.println(places[place]);
+            System.out.println("-------------------------------------");
         } else if (Wizzard.xp >= 40 && act == 4) {
             act = 5;
             place = 4;
+            System.out.println("-------------------------------------");
             System.out.println(places[place]);
+            System.out.println("-------------------------------------");
         } else if (Wizzard.xp >= 50 && act == 5) {
             act = 6;
             place = 5;
+            System.out.println("-------------------------------------");
             System.out.println(places[place]);
+            System.out.println("-------------------------------------");
         } else if (Wizzard.xp >= 60 && act == 6) {
             act = 7;
             place = 6;
+            System.out.println("-------------------------------------");
             System.out.println(places[place]);
+            System.out.println("-------------------------------------");
         } else if (Wizzard.xp >= 70 && act == 7) {
             act = 7;
             place = 7;
+            System.out.println("-------------------------------------");
             System.out.println(places[place]);
+            System.out.println("-------------------------------------");
         }
+    }
 
+    public static int getcheckAct() {
+        return act;
+    }
 
-        //public static void Game() {
-         //   checkAct();
-        //}
+    public class Combat {
+        public static Wizzard Wizzard;
+        public static Enemy Enemy;
+        static boolean end;
+
+        public Combat(Wizzard Wizzard, Enemy Enemy) {
+            this.Wizzard = Wizzard;
+            this.Enemy = Enemy;
+            this.end = false;
+
+        }
+    }
+
+    public static void Chap1() {
+        checkAct();
+        Spell.AddSpell();
+        Enemy Troll = new Enemy("Troll",100, 50);
+        int round = 0;
+        do {
+            round = round+1;
+            System.out.println("-------------------------------------");
+            System.out.println("ROUND" +round );
+            System.out.println("-------------------------------------");
+            System.out.println(Wizzard.getName() + "What do you want to use ? \n spell : attack ? \n potion : defend ? \n spell learn : Wingardium Leviosa ?");
+            Scanner scanner = new Scanner(System.in);
+            String choose = scanner.nextLine();
+            if (choose.equals("Wingardium Leviosa")) {
+                Wizzard.spell();
+            } else if (choose.equals("potion")) {
+                System.out.println("You can't use potion you have" + Wizzard.getMaxhp());
+                Enemy.attack();
+                System.out.println("Vous avez perdu" + Wizzard.hp + "il vous reste" + Wizzard.Maxhp);
+            } else {
+                Wizzard.spell();
+                System.out.println("Vous avez infligez" + Troll.maxHp + "il vous reste" + Wizzard.Maxhp);
+            }
+        } while (Enemy.Alive());
+        if (Enemy.Alive()){
+            System.out.println(Wizzard.getName() + " a gagné !");
+            boolean end = true;
+            return;
+        } else {
+
+        }
     }
 }
 
