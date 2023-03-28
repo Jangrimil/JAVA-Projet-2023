@@ -1,6 +1,5 @@
 public class Wizzard extends Character{
     public static String Name;
-    public static int Maxhp;
     public static String House;
     public static int maxhp;
     public String Core_Wand;
@@ -15,9 +14,11 @@ public class Wizzard extends Character{
     public String[] atkUpgrades = {};
     public String[] defendUpgrade = {};
 
-    public Wizzard(String Name, String Pet, String House, String Core_Wand, int NbWand ){
+    public Wizzard(int maxhp, int xp, String Name, String Pet, String House, String Core_Wand, int NbWand ){
 
         super(Name, Pet, 100, 10 );      //name, maxHp, xp
+        this.maxhp = maxhp;
+        this.xp= xp;
         this.Name = Name;
         this.Pet = Pet;
         this.House = House;
@@ -25,10 +26,7 @@ public class Wizzard extends Character{
         this.NbWand = NbWand;
     }
 
-    public static String getName() {
-
-        return Name;
-    }
+    public static String getName() {return Name;}
 
 
     //public static String House() {
@@ -41,11 +39,11 @@ public class Wizzard extends Character{
 
    //   Setter and Getter of hp Wizzard
     public static int getMaxhp() {
-        return Maxhp;
+        return maxhp;
     }
 
     public static void setMaxhp(int maxhp) {
-        Maxhp = maxhp;
+        maxhp = maxhp;
     }
 
     // Getter of Wizzard House
@@ -61,7 +59,7 @@ public class Wizzard extends Character{
 
 
     public static int spell() { //attack with spell
-        damage = Enemy.setMaxhp(Enemy.getMaxhp()-10);
+        damage = Enemy.getMaxhp()-10;
         return damage;
     }
 

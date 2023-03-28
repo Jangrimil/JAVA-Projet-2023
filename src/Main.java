@@ -11,7 +11,7 @@ public class Main {
         System.out.println("Define your Witcher name ");
         Scanner scanner = new Scanner(System.in);
         String Name = scanner.nextLine();
-        Wizzard Wizzard = new Wizzard(Name, null, House, Core_Wand, NbWand);
+        Wizzard Wizzard = new Wizzard(100,10,Name, null, House, Core_Wand, NbWand);
         System.out.println("Hello ! " +Wizzard.getName());
 
 
@@ -163,21 +163,22 @@ public class Main {
 
         if (petchoix == Pet.cat) {
             String Pet = "Cat";
-             Wizzard = new Wizzard(Name, Pet, House, Core_Wand, NbWand);
+             Wizzard = new Wizzard(100,10, Name, Pet, House, Core_Wand, NbWand);
             System.out.println("The chosen animal " + Wizzard.getPet());
         } else if (petchoix == Pet.Owl) {
             String Pet = "Owl";
-             Wizzard = new Wizzard(Name, Pet, House, Core_Wand, NbWand);
+             Wizzard = new Wizzard(100,10, Name, Pet, House, Core_Wand, NbWand);
             System.out.println("The chosen animal " + Wizzard.getPet());
         } else if (petchoix == Pet.Rat) {
             String Pet = "Rat";
-             Wizzard = new Wizzard(Name, Pet, House, Core_Wand, NbWand);
+             Wizzard = new Wizzard(100,10,Name, Pet, House, Core_Wand, NbWand);
             System.out.println("The chosen animal " + Wizzard.getPet());
         } else if (petchoix == Pet.Toad) {
             String Pet = "Toad";
-             Wizzard = new Wizzard(Name, Pet, House, Core_Wand, NbWand);
+             Wizzard = new Wizzard(100,10,Name, Pet, House, Core_Wand, NbWand);
             System.out.println("The chosen animal " + Wizzard.getPet());
         }
+
         System.out.println(Wizzard);
         Main.checkAct();
         Main.getcheckAct();
@@ -257,7 +258,7 @@ public class Main {
             System.out.println("-------------------------------------");
             System.out.println("ROUND" +round );
             System.out.println("-------------------------------------");
-            System.out.println(Wizzard.getName() + "What do you want to use ? \n spell : attack ? \n potion : defend ? \n spell learn : Wingardium Leviosa ?");
+            System.out.println(Wizzard.getName() + " What do you want to use ? \n spell : attack ? \n potion : defend ? \n spell learn : Wingardium Leviosa ?");
             Scanner scanner = new Scanner(System.in);
             String choose = scanner.nextLine();
             if (choose.equals("Wingardium Leviosa")) {
@@ -266,12 +267,12 @@ public class Main {
             } else if (choose.equals("potion")) {
                 System.out.println(" You can't use potion you have " + Wizzard.getMaxhp());
                 Enemy.attack();
-                System.out.println(" Vous avez perdu " + Wizzard.hp + " il vous reste " + Wizzard.Maxhp);
+                System.out.println(" Vous avez perdu " + Wizzard.hp + " il vous reste " + Wizzard.maxhp);
             } else {
                 Wizzard.spell();
-                System.out.println("Vous avez infligez" + Troll.maxHp + "il vous reste" + Wizzard.Maxhp);
+                System.out.println(" Vous avez infligez " + Troll.getMaxhp() + " il vous reste " + Wizzard.maxhp);
             }
-        } while (Enemy.Alive());
+        } while (Enemy.Alive() && Troll.Alive());
         if (Enemy.Alive()){
             System.out.println(Wizzard.getName() + " a gagné !");
             end = true;
