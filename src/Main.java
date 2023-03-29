@@ -11,8 +11,8 @@ public class Main {
         System.out.println("Define your Witcher name ");
         Scanner scanner = new Scanner(System.in);
         String Name = scanner.nextLine();
-        Wizzard Wizzard = new Wizzard(100,10,Name, null, House, Core_Wand, NbWand);
-        System.out.println("Hello ! " +Wizzard.getName());
+        Wizzard Wizzard = new Wizzard(100, 10, Name, null, House, Core_Wand, NbWand);
+        System.out.println("Hello ! " + Wizzard.getName());
 
 
         /// Define WANd of the Witcher
@@ -163,19 +163,19 @@ public class Main {
 
         if (petchoix == Pet.cat) {
             String Pet = "Cat";
-             Wizzard = new Wizzard(100,10, Name, Pet, House, Core_Wand, NbWand);
+            Wizzard = new Wizzard(100, 10, Name, Pet, House, Core_Wand, NbWand);
             System.out.println("The chosen animal " + Wizzard.getPet());
         } else if (petchoix == Pet.Owl) {
             String Pet = "Owl";
-             Wizzard = new Wizzard(100,10, Name, Pet, House, Core_Wand, NbWand);
+            Wizzard = new Wizzard(100, 10, Name, Pet, House, Core_Wand, NbWand);
             System.out.println("The chosen animal " + Wizzard.getPet());
         } else if (petchoix == Pet.Rat) {
             String Pet = "Rat";
-             Wizzard = new Wizzard(100,10,Name, Pet, House, Core_Wand, NbWand);
+            Wizzard = new Wizzard(100, 10, Name, Pet, House, Core_Wand, NbWand);
             System.out.println("The chosen animal " + Wizzard.getPet());
         } else if (petchoix == Pet.Toad) {
             String Pet = "Toad";
-             Wizzard = new Wizzard(100,10,Name, Pet, House, Core_Wand, NbWand);
+            Wizzard = new Wizzard(100, 10, Name, Pet, House, Core_Wand, NbWand);
             System.out.println("The chosen animal " + Wizzard.getPet());
         }
 
@@ -196,44 +196,50 @@ public class Main {
     public static String[] places = {"The Philosopher's Stone", "The Chamber of Secrets", "The Prisoner of Azkaban", "The Goblet of Fire", "The Order of the Phenix", "The half-blood Prince", "The Deathly Hallows"};
 
     public static void checkAct() {
-        if (Wizzard.xp >= 10 && act == 1) {
+        if (Wizzard.xp <= 10 && act == 1) {
             act = 2;
-            place = 1;
+            place = 0;
             System.out.println("-------------------------------------");
             System.out.println(places[place]);
             System.out.println("-------------------------------------");
         } else if (Wizzard.xp >= 20 && act == 2) {
             act = 3;
-            place = 2;
+            place = 1;
             System.out.println("-------------------------------------");
             System.out.println(places[place]);
             System.out.println("-------------------------------------");
         } else if (Wizzard.xp >= 30 && act == 3) {
             act = 4;
-            place = 3;
+            place = 2;
             System.out.println("-------------------------------------");
             System.out.println(places[place]);
             System.out.println("-------------------------------------");
         } else if (Wizzard.xp >= 40 && act == 4) {
             act = 5;
-            place = 4;
+            place = 3;
             System.out.println("-------------------------------------");
             System.out.println(places[place]);
             System.out.println("-------------------------------------");
         } else if (Wizzard.xp >= 50 && act == 5) {
             act = 6;
-            place = 5;
+            place = 4;
             System.out.println("-------------------------------------");
             System.out.println(places[place]);
             System.out.println("-------------------------------------");
         } else if (Wizzard.xp >= 60 && act == 6) {
             act = 7;
-            place = 6;
+            place = 5;
             System.out.println("-------------------------------------");
             System.out.println(places[place]);
             System.out.println("-------------------------------------");
         } else if (Wizzard.xp >= 70 && act == 7) {
             act = 7;
+            place = 6;
+            System.out.println("-------------------------------------");
+            System.out.println(places[place]);
+            System.out.println("-------------------------------------");
+        } else if (Wizzard.xp >= 80 && act == 8) {
+            act = 8;
             place = 7;
             System.out.println("-------------------------------------");
             System.out.println(places[place]);
@@ -245,18 +251,12 @@ public class Main {
         return act;
     }
 
-
-
-    public static void Chap1() {
-        boolean end = false;
-        checkAct();
-        Spell.AddSpell();
-        Enemy Troll = new Enemy("Troll",100, 50);
+    public static void Combat() {
         int round = 0;
         do {
-            round = round+1;
+            round = round + 1;
             System.out.println("-------------------------------------");
-            System.out.println("ROUND" +round );
+            System.out.println("ROUND" + round);
             System.out.println("-------------------------------------");
             System.out.println(Wizzard.getName() + " What do you want to use ? \n spell : attack ? \n potion : defend ? \n spell learn : Wingardium Leviosa ?");
             Scanner scanner = new Scanner(System.in);
@@ -265,23 +265,41 @@ public class Main {
                 Wizzard.spell();
 
             } else if (choose.equals("potion")) {
-                System.out.println(" You can't use potion you have " + Wizzard.getMaxhp());
-                Enemy.attack();
-                System.out.println(" Vous avez perdu " + Wizzard.hp + " il vous reste " + Wizzard.maxhp);
+                if (Wizzard.maxhp == 100) {
+                    System.out.println(" You can't use potion you have " + Wizzard.getMaxhp());
+                    Enemy.attack();
+                    System.out.println(" Vous avez perdu " + Wizzard.maxhp + " il vous reste " + Wizzard.maxhp);
+                } else {
+                    Wizzard.potion();
+                }
             } else {
                 Wizzard.spell();
-                System.out.println(" Vous avez infligez " + Troll.getMaxhp() + " il vous reste " + Wizzard.maxhp);
+                System.out.println(" Vous avez infligez " + Enemy.getMaxhp() + " au Troll, il vous reste " + Wizzard.maxhp);
             }
-        } while (Enemy.Alive() && Troll.Alive());
-        if (Enemy.Alive()){
-            System.out.println(Wizzard.getName() + " a gagné !");
-            end = true;
-            return;
-        } else {
+            Enemy.attack();
+            System.out.println("Enemy vous a attaquez, il vous reste " + Wizzard.maxhp);
+        } while (Enemy.Alive() && Wizzard.Alive());
+    }
 
+    public static void Chap1() {
+        boolean end = false;
+        checkAct();
+        Spell.AddSpell();
+        Enemy Troll = new Enemy("Troll", 100, 50);
+        Combat();
+        if (Enemy.Alive()) {
+            System.out.println("Vous avez perdu ! Voulez vous recommencez ?");
+            Scanner scanner = new Scanner(System.in);
+            String response = scanner.nextLine();
+            if (response == "yes") {
+                Chap1();
+            } else {
+                System.out.println("A bientot");
+            }
+        } else {
+            System.out.println("Bravo vous avez gagnez ! Passons au chapitre suivant");
         }
     }
 }
-
 
 

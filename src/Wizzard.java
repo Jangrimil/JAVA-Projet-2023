@@ -42,8 +42,9 @@ public class Wizzard extends Character{
         return maxhp;
     }
 
-    public static void setMaxhp(int maxhp) {
-        maxhp = maxhp;
+    public static int setMaxhp(int maxhp) {
+        Wizzard.maxhp = maxhp;
+        return maxhp;
     }
 
     // Getter of Wizzard House
@@ -53,13 +54,12 @@ public class Wizzard extends Character{
     }
 
     public static boolean Alive(){
-        maxhp = 0;
-        return false;
+        return maxhp > 0;
     }
 
 
     public static int spell() { //attack with spell
-        damage = Enemy.getMaxhp()-10;
+        damage = Enemy.setMaxhp(getMaxhp()-10);
         return damage;
     }
 

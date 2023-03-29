@@ -1,20 +1,25 @@
+import javax.naming.Name;
+
 public class Enemy extends AbstractEnemy{
 
     private static int maxhp;
 
+    private static String name;
+    public static int damage;
+
     public Enemy(String name, int maxHp, int xp) {
         super(name, maxHp, xp);
+        this.name = name;
     }
 
     public static boolean Alive(){
         int Life = Enemy.maxhp;
-        Enemy.maxhp = 0;
-        return false;
+        return Enemy.maxhp > 0;
     }
+
     public static int attack() {
-        int maxhpWizard = Wizzard.hp;
-        maxhpWizard = -1;
-        return 0;
+        damage = Wizzard.setMaxhp(Wizzard.getMaxhp()-5);
+        return damage;
     }
 
     public static int setMaxhp(int maxhp) {
@@ -24,6 +29,10 @@ public class Enemy extends AbstractEnemy{
 
     public static int getMaxhp() {
         return maxhp;
+    }
+
+    public static String getName() {
+        return name;
     }
 
     //@Override
