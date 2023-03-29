@@ -33,7 +33,7 @@ public class Spell extends AbstractSpell {
         } else if (Main.getcheckAct()==3) {
             System.out.println("You receive a new spell call Ex....? you have to discover the name for use it, they attack your Enemy with 70 points of damage");
         } else if (Main.getcheckAct()==4) {
-            System.out.println("You receive a new spell call Acio, they attack your Enemy with 10 points of damage");
+            System.out.println("You receive a new spell call Acio, they attack your Enemy with 30 points of damage");
         }
     }
 

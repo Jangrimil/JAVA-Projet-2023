@@ -1,5 +1,5 @@
 public enum Core {
     Phoenix_feather,
-    dragon_heartstring, Core;
+    dragon_heartstring,
 }
 

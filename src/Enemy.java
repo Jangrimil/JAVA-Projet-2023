@@ -18,7 +18,11 @@ public class Enemy extends AbstractEnemy{
     }
 
     public static int attack() {
-        damage = Wizzard.setMaxhp(Wizzard.getMaxhp()-5);
+        if (Wizzard.House.equals("Gryffindor")){
+            damage = Wizzard.setMaxhp(Wizzard.getMaxhp()-5);
+            return damage;
+        }
+        damage = Wizzard.setMaxhp(Wizzard.getMaxhp()-10);
         return damage;
     }
 

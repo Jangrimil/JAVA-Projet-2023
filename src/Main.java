@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
@@ -130,22 +131,22 @@ public class Main {
 
         if (countA > countB && countA > countC && countA > countD) {
             House = "Ravenclaw";
-            SortingHat HouseWizzard = new SortingHat(House);
+            SortingHat HouseWizzard = new SortingHat(House,1.5f, 1, 1,1 );
             System.out.println("You belong to " + HouseWizzard.getHouse() + " House\nNotable members include Luna Lovegood, Gilderoy Lockhart and Filius Flitwick.\n\n‘Or yet in wise old Ravenclaw\nIf you’ve a ready mind\nWhere those of wit and learning\nWill always find their kind.’\nHarry Potter and the Philosopher’s Stone");
             //Wizzard = Wizzard(Name, null, House, Core_Wand, NbWand);
         } else if (countB > countA && countB > countC && countB > countD) {
             House = "Slytherin";
-            SortingHat HouseWizzard = new SortingHat(House);
+            SortingHat HouseWizzard = new SortingHat(House, 1,1.5f,1,1);
             System.out.println("You belong to " + HouseWizzard.getHouse() + " House\nNotable members include Severus Snape, Draco Malfoy and (rather unfortunately) Lord Voldemort.\n\n‘Or perhaps in Slytherin\nYou’ll make your real friends\nThose cunning folk use any means\nTo achieve their ends.’\nHarry Potter and the Philosopher’s Stone");
             //Wizzard = Wizzard(Name, null, House, Core_Wand, NbWand);
         } else if (countC > countA && countC > countB && countC > countD) {
             House = "Gryffindor";
-            SortingHat HouseWizzard = new SortingHat(House);
+            SortingHat HouseWizzard = new SortingHat(House ,1,1,1.5f,1);
             System.out.println("You belong to " + HouseWizzard.getHouse() + " House\nNotable members include (of course) Harry Potter, Hermione Granger and Ron Weasley.\n\n‘You might belong in Gryffindor,\nWhere dwell the brave at heart,\nTheir daring, nerve and chivalry\nSet Gryffindors apart.’\nHarry Potter and the Philosopher’s Stone");
             //Wizzard = Wizzard(Name, null, House, Core_Wand, NbWand);
         } else {
             House = "Hufflepuff";
-            SortingHat HouseWizzard = new SortingHat(House);
+            SortingHat HouseWizzard = new SortingHat(House,1,1,1,1.5f);
             System.out.println("You belong to " + HouseWizzard.getHouse() + " House\nNotable members include Newt Scamander, Cedric Diggory and Nymphadora Tonks.\n\n‘You might belong in Hufflepuff\nWhere they are just and loyal\nThose patient Hufflepuffs are true\nAnd unafraid of toil.’\nHarry Potter and the Philosopher’s Stone <3");
             //Wizzard = Wizzard(Name, null, House, Core_Wand, NbWand);
         }
@@ -258,26 +259,51 @@ public class Main {
             System.out.println("-------------------------------------");
             System.out.println("ROUND" + round);
             System.out.println("-------------------------------------");
-            System.out.println(Wizzard.getName() + " What do you want to use ? \n spell : attack ? \n potion : defend ? \n spell learn : Wingardium Leviosa ?");
-            Scanner scanner = new Scanner(System.in);
-            String choose = scanner.nextLine();
-            if (choose.equals("Wingardium Leviosa")) {
-                Wizzard.spell();
-
-            } else if (choose.equals("potion")) {
-                if (Wizzard.maxhp == 100) {
-                    System.out.println(" You can't use potion you have " + Wizzard.getMaxhp());
-                    Enemy.attack();
-                    System.out.println(" Vous avez perdu " + Wizzard.maxhp + " il vous reste " + Wizzard.maxhp);
-                } else {
-                    Wizzard.potion();
-                }
+            Random rand = new Random();
+            int precisionWizzard;
+            int precisionEnemy;
+            if (Wizzard.House.equals("Ravenclaw")){
+                int min = 25;
+                int max = 100;
+                precisionWizzard = rand.nextInt(max - min +1)+min;
+                precisionEnemy = rand.nextInt(max - min +1)+min;
             } else {
-                Wizzard.spell();
-                System.out.println(" Vous avez infligez " + Enemy.getMaxhp() + " au Troll, il vous reste " + Wizzard.maxhp);
+                int min = 0;
+                int max = 100;
+                precisionWizzard = rand.nextInt(max - min +1)+min;
+                precisionEnemy = rand.nextInt(max - min +1)+min;
             }
-            Enemy.attack();
-            System.out.println("Enemy vous a attaquez, il vous reste " + Wizzard.maxhp);
+            if (precisionWizzard > precisionEnemy) {
+                System.out.println("You got your attack !! : " +precisionWizzard+ "%");
+                System.out.println(Wizzard.getName() + " What do you want to use ? \n spell : attack ? \n potion : defend ? \n spell learn : Wingardium Leviosa ?");
+                Scanner scanner = new Scanner(System.in);
+                String choose = scanner.nextLine();
+                if (choose.equals("Wingardium Leviosa")) {
+                    Wizzard.WingardiumLeviosa();
+                    System.out.println(" Vous avez infligez " + Enemy.getMaxhp() + " au Troll, il vous reste " + Wizzard.maxhp);
+                } else if (choose.equals("potion")) {
+                    if (Wizzard.maxhp == 100) {
+                        System.out.println(" You can't use potion you have " + Wizzard.getMaxhp());
+                        Enemy.attack();
+                        System.out.println("Enemy vous a attaquez, il vous reste " + Wizzard.maxhp);
+                    } else {
+                        Wizzard.potion();
+                        System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp());
+                    }
+                } else {
+                    Wizzard.spell();
+                    System.out.println(" Vous avez infligez " + Enemy.getMaxhp() + " au Troll, il vous reste " + Wizzard.maxhp);
+                }
+            } else if (precisionEnemy > precisionWizzard) {
+                System.out.println("It's the tour of your Enemy...");
+                Enemy.attack();
+                System.out.println("Enemy vous a attaquez, il vous reste " + Wizzard.maxhp);
+            } else {
+                System.out.println("Your Enemy have an advantage");
+                Enemy.attack();
+                System.out.println("Enemy vous a attaquez, il vous reste " + Wizzard.maxhp);
+            }
+
         } while (Enemy.Alive() && Wizzard.Alive());
     }
 
@@ -296,9 +322,15 @@ public class Main {
             } else {
                 System.out.println("A bientot");
             }
-        } else {
-            System.out.println("Bravo vous avez gagnez ! Passons au chapitre suivant");
+        } else if (Wizzard.Alive()){
+            Wizzard.setXp(20);
+            Wizzard.setMaxhp(100);
+            System.out.println("Congrat you have win ! let's go to 2nd year of Hogwarts, But first, here is your reward : "  );
+            Chap2();
         }
+    }
+    public static void Chap2(){
+
     }
 }
 

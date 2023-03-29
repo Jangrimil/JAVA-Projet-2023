@@ -1,24 +1,20 @@
-public class Wizzard extends Character{
+import java.util.Scanner;
+
+public class Wizzard extends Character {
     public static String Name;
     public static String House;
-    public static int maxhp;
+    public static int maxhp, xp;
     public String Core_Wand;
     public int NbWand;
     public static int damage;
     public static String Spell;
-    public String Potion;
     public String Pet;
-    public String[] Potionlearn ={};
 
+    public Wizzard(int maxhp, int xp, String Name, String Pet, String House, String Core_Wand, int NbWand) {
 
-    public String[] atkUpgrades = {};
-    public String[] defendUpgrade = {};
-
-    public Wizzard(int maxhp, int xp, String Name, String Pet, String House, String Core_Wand, int NbWand ){
-
-        super(Name, Pet, 100, 10 );      //name, maxHp, xp
+        super(Name, Pet, 100, 10);      //name, maxHp, xp
         this.maxhp = maxhp;
-        this.xp= xp;
+        this.xp = xp;
         this.Name = Name;
         this.Pet = Pet;
         this.House = House;
@@ -26,18 +22,18 @@ public class Wizzard extends Character{
         this.NbWand = NbWand;
     }
 
-    public static String getName() {return Name;}
+    public static String getName() {
+        return Name;
+    }
 
 
-    //public static String House() {
-     //   String house = SortingHat.SortingHat(String "Slytherin");
-    //    if (house == Slytherin)
-    //}
 
-    public String getPet(){return Pet;}
+    public String getPet() {
+        return Pet;
+    }
 
 
-   //   Setter and Getter of hp Wizzard
+    //   Setter and Getter of hp Wizzard
     public static int getMaxhp() {
         return maxhp;
     }
@@ -47,19 +43,45 @@ public class Wizzard extends Character{
         return maxhp;
     }
 
+    public static int setXp(int xp) {
+        Wizzard.xp = xp;
+        return xp;
+    }
+
     // Getter of Wizzard House
-    public static String getHouse(){
+    public static String getHouse() {
 
         return House;
     }
 
-    public static boolean Alive(){
+    public static boolean Alive() {
         return maxhp > 0;
     }
 
+    //          SPELL           //
 
     public static int spell() { //attack with spell
-        damage = Enemy.setMaxhp(getMaxhp()-10);
+        if (House.equals("Slytherin")){
+            damage = Enemy.setMaxhp(getMaxhp() - 25);
+            return damage;
+        }
+        damage = Enemy.setMaxhp(getMaxhp() - 20);
+        return damage;
+    }
+    public static int WingardiumLeviosa() {
+        damage = Enemy.setMaxhp(getMaxhp() - 30);
+        return damage;
+    }
+    public static int Acio() {
+        damage = Enemy.setMaxhp(getMaxhp() - 35);
+        return damage;
+    }
+    public static int GryffindorSword(){
+        damage = Enemy.setMaxhp(getMaxhp() - 50);
+        return damage;
+    }
+    public static int ExpectoPatronum(){
+        damage = Enemy.setMaxhp(getMaxhp() - 60);
         return damage;
     }
 
@@ -71,6 +93,9 @@ public class Wizzard extends Character{
         return Spell;
     }
     public static int potion() { //defend with potion
+        if (House.equals("Hufflepuff")){
+            setMaxhp(getMaxhp()+20);
+        }
         setMaxhp(getMaxhp()+10);
         return 0;
     }
