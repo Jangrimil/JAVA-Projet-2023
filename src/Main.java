@@ -308,7 +308,6 @@ public class Main {
     }
 
     public static void Chap1() {
-        boolean end = false;
         checkAct();
         Spell.AddSpell();
         Enemy Troll = new Enemy("Troll", 100, 50);
@@ -325,13 +324,173 @@ public class Main {
         } else if (Wizzard.Alive()){
             Wizzard.setXp(20);
             Wizzard.setMaxhp(100);
-            System.out.println("Congrat you have win ! let's go to 2nd year of Hogwarts, But first, here is your reward : "  );
+            System.out.println("Congrat you have win ! let's go to the 2nd years of Hogwarts, But first, here is your reward : "  );
             Chap2();
         }
     }
-    public static void Chap2(){
 
+    public static void Combat2G(){
+        int round = 0;
+        do {
+            round = round + 1;
+            System.out.println("-------------------------------------");
+            System.out.println("ROUND" + round);
+            System.out.println("-------------------------------------");
+            // PRECISION OF ENEMY AND WIZZARD (DISTRIBUTION OF ROUND)
+            Random rand = new Random();
+            int precisionWizzard;
+            int precisionEnemy;
+            if (Wizzard.House.equals("Ravenclaw")){
+                int min = 25;
+                int max = 100;
+                precisionWizzard = rand.nextInt(max - min +1)+min;
+                precisionEnemy = rand.nextInt(max - min +1)+min;
+            } else {
+                int min = 0;
+                int max = 100;
+                precisionWizzard = rand.nextInt(max - min +1)+min;
+                precisionEnemy = rand.nextInt(max - min +1)+min;
+            }
+            /////////////////////////////////////////////////////////////////////
+            if (precisionWizzard > precisionEnemy) {
+                System.out.println("You got your attack !! : " +precisionWizzard+ "%");
+                System.out.println(Wizzard.getName() + " What do you want to use ? \n spell : attack ? \n potion : defend ? \n items : Gryffondor Sword (50) ?");
+                Scanner scanner = new Scanner(System.in);
+                String choose = scanner.nextLine();
+                if (choose.equals("Gryffondor Sword")) {
+                    Wizzard.GryffindorSword();
+                    System.out.println(" Vous avez infligez " + Enemy.getMaxhp() + " au " +Enemy.getName()+" il vous reste " + Wizzard.maxhp);
+                } else if (choose.equals("potion")) {
+                    if (Wizzard.maxhp == 100) {
+                        System.out.println(" You can't use potion you have " + Wizzard.getMaxhp());
+                        Enemy.attack();
+                        System.out.println("Enemy vous a attaquez, il vous reste " + Wizzard.maxhp);
+                    } else {
+                        Wizzard.potion();
+                        System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp()+ "Your enemy have : " +Enemy.getMaxhp());
+                    }
+                } else {
+                    Wizzard.spell();
+                    System.out.println(" Vous avez infligez " + Enemy.getMaxhp() + " au "+Enemy.getName()+", il vous reste " + Wizzard.maxhp);
+                }
+            } else if (precisionEnemy > precisionWizzard) {
+                System.out.println("It's the tour of your Enemy...");
+                Enemy.attack();
+                System.out.println("Enemy vous a attaquez, il vous reste " + Wizzard.maxhp);
+            } else {
+                System.out.println("Your Enemy have an advantage");
+                Random randEne = new Random();
+                int min = 1;
+                int max = 2;
+                int chooseEnemy = randEne.nextInt(max - min +1)+min;
+                if (chooseEnemy==1){
+                    Enemy.setMaxhp(Enemy.getMaxhp()+5);
+                    System.out.println("Enemy choose health : " +Enemy.getMaxhp());
+                } else {
+                    Enemy.attack();
+                    System.out.println("Enemy has attacked you, you are left " + Wizzard.maxhp);
+                }
+            }
+        } while (Enemy.Alive() && Wizzard.Alive());
     }
+    public static void Combat2(){
+        int round = 0;
+        do {
+            round = round + 1;
+            System.out.println("-------------------------------------");
+            System.out.println("ROUND" + round);
+            System.out.println("-------------------------------------");
+            // PRECISION OF ENEMY AND WIZZARD (DISTRIBUTION OF ROUND)
+            Random rand = new Random();
+            int precisionWizzard;
+            int precisionEnemy;
+            if (Wizzard.House.equals("Ravenclaw")){
+                int min = 25;
+                int max = 100;
+                precisionWizzard = rand.nextInt(max - min +1)+min;
+                precisionEnemy = rand.nextInt(max - min +1)+min;
+            } else {
+                int min = 0;
+                int max = 100;
+                precisionWizzard = rand.nextInt(max - min +1)+min;
+                precisionEnemy = rand.nextInt(max - min +1)+min;
+            }
+            /////////////////////////////////////////////////////////////////////
+            if (precisionWizzard > precisionEnemy) {
+                System.out.println("You got your attack !! : " +precisionWizzard+ "%");
+                System.out.println(Wizzard.getName() + " What do you want to use ? \n spell : attack ? \n potion : defend ? \n new spell : Acio (35) ?");
+                Scanner scanner = new Scanner(System.in);
+                String choose = scanner.nextLine();
+                if (choose.equals("Acio")) {
+                    Wizzard.Acio();
+                    System.out.println(" Vous avez infligez " + Enemy.getMaxhp() + " au " +Enemy.getName()+" il vous reste " + Wizzard.maxhp);
+                } else if (choose.equals("potion")) {
+                    if (Wizzard.maxhp == 100) {
+                        System.out.println(" You can't use potion you have " + Wizzard.getMaxhp());
+                        Enemy.attack();
+                        System.out.println("Enemy vous a attaquez, il vous reste " + Wizzard.maxhp);
+                    } else {
+                        Wizzard.potion();
+                        System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp()+ "Your enemy have : " +Enemy.getMaxhp());
+                    }
+                } else {
+                    Wizzard.spell();
+                    System.out.println(" Vous avez infligez " + Enemy.getMaxhp() + " au "+Enemy.getName()+", il vous reste " + Wizzard.maxhp);
+                }
+            } else if (precisionEnemy > precisionWizzard) {
+                System.out.println("It's the tour of your Enemy...");
+                Enemy.attack();
+                System.out.println("Enemy vous a attaquez, il vous reste " + Wizzard.maxhp);
+            } else {
+                System.out.println("Your Enemy have an advantage");
+                Random randEne = new Random();
+                int min = 1;
+                int max = 2;
+                int chooseEnemy = randEne.nextInt(max - min +1)+min;
+                if (chooseEnemy==1){
+                    Enemy.setMaxhp(Enemy.getMaxhp()+5);
+                    System.out.println("Enemy choose health : " +Enemy.getMaxhp());
+                } else {
+                    Enemy.attack();
+                    System.out.println("Enemy has attacked you, you are left " + Wizzard.maxhp);
+                }
+            }
+        } while (Enemy.Alive() && Wizzard.Alive());
+    }
+
+    public static void Chap2(){
+        checkAct();
+        Spell.AddSpell();
+        Enemy Basilic = new Enemy("Basilic", 110, 50);
+        if (Wizzard.House.equals("Gryffondor")) {
+            Combat2G();
+        } else {
+            Combat();
+        }
+        if (Enemy.Alive()) {
+            System.out.println("Vous avez perdu ! Voulez vous recommencez ?");
+            Scanner scanner = new Scanner(System.in);
+            String response = scanner.nextLine();
+            if (response == "yes") {
+                if (Wizzard.House.equals("Gryffondor")) {
+                    Combat2G();
+                } else {
+                    Combat();
+                }
+            } else {
+                System.out.println("A bientot");
+            }
+        } else if (Wizzard.Alive()){
+            Wizzard.setXp(30);
+            Wizzard.setMaxhp(100);
+            System.out.println("Congrat you have win ! let's go to the 2nd years of Hogwarts, But first, here is your reward : "  );
+            Chap3();
+        }
+    }
+    public static void Chap3(){
+        System.out.println("Building...");
+    }
+
 }
 
 
