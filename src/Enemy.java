@@ -1,15 +1,15 @@
-import javax.naming.Name;
-
 public class Enemy extends AbstractEnemy{
 
-    private static int maxhp;
+    public static int maxhp,xp;
 
     private static String name;
-    public static int damage;
+    public static int damage, totaldamage;
 
-    public Enemy(String name, int maxHp, int xp) {
-        super(name, maxHp, xp);
+    public Enemy(String name, int maxhp, int xp) {
+        super(name, 100, 10);
         this.name = name;
+        this.maxhp = maxhp;
+        this.xp = xp;
     }
 
     public static boolean Alive(){
@@ -17,13 +17,36 @@ public class Enemy extends AbstractEnemy{
         return Enemy.maxhp > 0;
     }
 
+    public static void takeDamage() {
+        totaldamage += damage;
+        die();
+    }
+    public int getTotaldamage() {
+        return maxhp;
+    }
     public static int attack() {
         if (Wizzard.House.equals("Gryffindor")){
             damage = Wizzard.setMaxhp(Wizzard.getMaxhp()-5);
-            return damage;
+            Wizzard.die();
+        } else if (Enemy.getName() == "Dolores Umbridge") {
+            if (Wizzard.House.equals("Gryffindor")) {
+                damage = Wizzard.setMaxhp(Wizzard.getMaxhp() - 10);
+                Wizzard.die();
+            } else { damage = Wizzard.setMaxhp(Wizzard.getMaxhp()-20);
+                Wizzard.die();
+            }
         }
-        damage = Wizzard.setMaxhp(Wizzard.getMaxhp()-10);
+        else {damage = Wizzard.setMaxhp(Wizzard.getMaxhp()-10);
+            Wizzard.die();
+        }
         return damage;
+    }
+
+    public static int die() {
+        if (Enemy.maxhp <= 0) {
+            Enemy.setMaxhp(0);
+        }
+        return maxhp;
     }
 
     public static int setMaxhp(int maxhp) {
