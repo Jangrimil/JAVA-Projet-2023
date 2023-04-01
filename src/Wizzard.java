@@ -13,11 +13,11 @@ public class Wizzard extends Character {
     public Wizzard(int maxhp, int xp, String Name, String Pet, String House, String Core_Wand, int NbWand) {
 
         super(Name, Pet, 100, 10);      //name, maxHp, xp
-        this.maxhp = maxhp;
-        this.xp = xp;
-        this.Name = Name;
+        Wizzard.maxhp = maxhp;
+        Wizzard.xp = xp;
+        Wizzard.Name = Name;
         this.Pet = Pet;
-        this.House = House;
+        Wizzard.House = House;
         this.Core_Wand = Core_Wand;
         this.NbWand = NbWand;
     }
@@ -60,26 +60,24 @@ public class Wizzard extends Character {
         return House;
     }
 
-    public static boolean Alive() {
-        return maxhp > 0;
-    }
+
 
     //          SPELL           //
 
-    public static void spell(Enemy Enemy) { //attack with spell
+    public static void spell(int damage) { //attack with spell
         if (House.equals("Slytherin")) {
-            damage = Enemy.setMaxhp(Enemy.getMaxhp() - 20);
+            Enemy.setMaxhp(Enemy.getMaxhp() - 20);
             Enemy.die();
             //return damage;
 
         } else {
-            damage = Enemy.setMaxhp(Enemy.getMaxhp() - 10);
+            damage = Enemy.setMaxhp(Enemy.getMaxhp() - damage); //10
             Enemy.die();
             //return damage;
         }
     }
 
-    public static void spell5(Enemy Enemy){
+    public static void spell5(){
         if (House.equals("Slytherin")) {
             damage = Enemy.setMaxhp(Enemy.getMaxhp() - 25);
             Enemy.die();
@@ -91,6 +89,7 @@ public class Wizzard extends Character {
 
     protected static void firework(int damage){
         damage = Enemy.setMaxhp(Enemy.getMaxhp())-damage;
+        Enemy.die();
     }
     public static int WingardiumLeviosa() {
         damage = Enemy.setMaxhp(Enemy.getMaxhp() - 30);
@@ -108,9 +107,20 @@ public class Wizzard extends Character {
         Enemy.die();
         return damage;
     }
-    public static int ExpectoPatronus(Enemy Enemy){
+    public static int ExpectoPatronus(){
         damage = Enemy.setMaxhp(Enemy.getMaxhp() - 60);
         Enemy.die();
+        return damage;
+    }
+
+    public static int Expelliarmus(){
+        damage = Enemy.setMaxhp(Enemy.getMaxhp() - 70);
+        setMaxhp(getMaxhp()+20);
+        Enemy.die();
+        return damage;
+    }
+    public static int Sectumsempra(int damage){
+        damage = Enemy.setMaxhp(Enemy.getMaxhp() - 45);
         return damage;
     }
 
@@ -131,6 +141,9 @@ public class Wizzard extends Character {
         }
     }
 
+    public static boolean Alive() {
+        return Wizzard.maxhp > 0;
+    }
     public static int die(){
         if (Wizzard.maxhp<=0){
             Wizzard.setMaxhp(0);

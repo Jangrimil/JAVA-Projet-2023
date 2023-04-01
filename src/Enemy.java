@@ -11,11 +11,53 @@ public class Enemy extends AbstractEnemy{
         this.maxhp = maxhp;
         this.xp = xp;
     }
-
-    public static boolean Alive(){
-        int Life = Enemy.maxhp;
-        return Enemy.maxhp > 0;
+///////////////////////////////////////////////////MANGEMORT CLASS////////////////////////////////////////////
+    public static class Mangemort extends AbstractEnemy{
+        private static int maxhp,xp;
+        private static String name;
+        public Mangemort(String name, int maxhp, int xp){
+            super(name,100,50);
+            this.name = name;
+            this.maxhp = maxhp;
+            this.xp = xp;
     }
+        public static boolean Alive(){return Mangemort.maxhp > 0;}
+        public static int attack(int damage) {
+            if (Wizzard.House.equals("Gryffindor")){
+                damage = Wizzard.setMaxhp(Wizzard.getMaxhp()-damage);
+                Wizzard.die();
+            }
+            else {damage = Wizzard.setMaxhp(Wizzard.getMaxhp()-damage);
+                Wizzard.die();
+            }
+            return damage;
+        }
+        public static int setMaxhp(int maxhp) {Mangemort.maxhp = maxhp; return maxhp;}
+        public static int getMaxhp() {return maxhp;}
+        public static String getName() {return name;}
+
+        public static int die() {
+            if (Mangemort.maxhp <= 0) {
+                Mangemort.setMaxhp(0);
+            }
+            return maxhp;
+        }
+        public static int Sectumsempra(){
+            damage = Mangemort.setMaxhp(Mangemort.getMaxhp() - 45);
+            return damage;
+        }
+        public static int spell(){
+            damage = Mangemort.setMaxhp(Mangemort.getMaxhp() - 20);
+            return damage;
+        }
+
+        @Override
+        public int defend() {
+            return 0;
+        }
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     public static void takeDamage() {
         totaldamage += damage;
@@ -47,6 +89,9 @@ public class Enemy extends AbstractEnemy{
             Enemy.setMaxhp(0);
         }
         return maxhp;
+    }
+    public static boolean Alive(){
+        return Enemy.maxhp > 0;
     }
 
     public static int setMaxhp(int maxhp) {
