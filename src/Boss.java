@@ -1,11 +1,11 @@
 public class Boss extends AbstractEnemy{
-    protected static int maxhp,xp;
+    protected static double maxhp,xp;
     private static String name;
     public static int damage;
     public static String CoreWand;
-    public Boss(String name, int maxhp, int xp){
-        super(name,100,50);
-        this.maxHp = maxhp;
+    public Boss(String name, double maxhp, int xp){
+        super(name,200,50);
+        this.maxhp = maxhp;
         this.xp = xp;
         this.name = name;
         this.CoreWand = CoreWand;
@@ -25,13 +25,13 @@ public class Boss extends AbstractEnemy{
 
     public static void beattacked(int damage){
         if (Wizzard.House.equals("Slytherin")) {
-            Enemy.setMaxhp(Enemy.getMaxhp() - 20);
-            Enemy.die();
+            Boss.setMaxhp(Boss.getMaxhp() - 2 *damage);
+            Boss.die();
             //return damage;
 
         } else {
-            damage = Enemy.setMaxhp(Enemy.getMaxhp() - damage); //10
-            Enemy.die();
+            Boss.setMaxhp(Boss.getMaxhp() - damage); //10
+            Boss.die();
             //return damage;
         }
     }
@@ -50,11 +50,11 @@ public class Boss extends AbstractEnemy{
 
     public static String getName() {return name;}
 
-    public static int die(){
+    public static boolean die(){
         if (Wizzard.maxhp<=0){
             Wizzard.setMaxhp(0);
         }
-        return maxhp;
+        return true;
     }
     @Override
     public int defend() {

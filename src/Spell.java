@@ -25,7 +25,7 @@ public class Spell extends AbstractSpell {
             System.out.println(places[place]);
             System.out.println("-------------------------------------");
             Wizzard.setSpell("Wingardium Leviosa");
-            System.out.println("You receive a new spell call Wingardium Leviosa, they attack your Enemy with 30 points of damage");
+            System.out.println("Welcome to your first year, for your first mission the Troll of the Hogwart is located in the toilets next to the dungeon. To defeat him defeat him, you must lift objects and release them when they are over his head. You receive a new spell call Wingardium Leviosa, they attack your Enemy with 30 points of damage");
         } else if (Wizzard.xp == 20) {
             place = 1;
             System.out.println("-------------------------------------");
@@ -33,23 +33,24 @@ public class Spell extends AbstractSpell {
             System.out.println("-------------------------------------");
             if (Wizzard.getHouse() != "Gryffindor"){
                 Wizzard.setSpell("Acio");
-                System.out.println("You receive a new spell call Acio, they attack your Enemy with 35 points of damage");
+                System.out.println("You are facing the terrible basilisk. If you are from Griffondor, you can use a new spell call Acio, they attack your Enemy with 35 points of damage");
             }else {
                 Wizzard.setSpell("Gryffindor Sword");
-                System.out.println("You receive a special sword for Gryffondor, they attack your Enemy with 50 points of damage");
+                System.out.println("You are facing the terrible basilisk. If you are from Griffondor, you can call upon the legendary sword of Godric Gryffindor to strike it down.");
             }
         } else if (Wizzard.xp == 30) {
             place = 2;
             System.out.println("-------------------------------------");
             System.out.println(places[place]);
             System.out.println("-------------------------------------");
-            System.out.println("You receive a new spell call Ex....? you have to discover the name for use it, they attack your Enemy with 60 points of damage");
+            System.out.println("The Destroyers are on the loose. They roam the streets, the countryside. Fortunately, you have heard of a spell to put them to flight call Ex....? you have to discover the name for use it, they attack your Enemy with 60 points of damage");
         } else if (Wizzard.xp == 40) {
             place = 3;
+            Wizzard.setSpell("Acio");
             System.out.println("-------------------------------------");
             System.out.println(places[place]);
             System.out.println("-------------------------------------");
-            System.out.println("You receive a spell call Acio, they attack your Enemy with 35 points of damage");
+            System.out.println("the Three Wizards Tournament... and the right to die, you have to run away from Voldemort and Peter Pettigrew for that, you must approach the Portolion, draw him to you (accio) and run away.");
         } else if (Wizzard.xp == 50) {
             place = 4;
             System.out.println("-------------------------------------");

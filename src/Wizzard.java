@@ -66,27 +66,15 @@ public class Wizzard extends Character {
 
     public static void spell(int damage) { //attack with spell
         if (House.equals("Slytherin")) {
-            Enemy.setMaxhp(Enemy.getMaxhp() - 20);
+            Enemy.setMaxhp(Enemy.getMaxhp() - damage*2);
             Enemy.die();
             //return damage;
-
         } else {
             damage = Enemy.setMaxhp(Enemy.getMaxhp() - damage); //10
             Enemy.die();
             //return damage;
         }
     }
-
-    public static void spell5(){
-        if (House.equals("Slytherin")) {
-            damage = Enemy.setMaxhp(Enemy.getMaxhp() - 25);
-            Enemy.die();
-        } else {
-            damage = Enemy.setMaxhp(Enemy.getMaxhp() - 20);
-            Enemy.die();
-        }
-    }
-
     protected static void firework(int damage){
         damage = Enemy.setMaxhp(Enemy.getMaxhp())-damage;
         Enemy.die();
@@ -97,11 +85,23 @@ public class Wizzard extends Character {
         return damage;
 
     }
-    public static int Acio() {
-        damage = Enemy.setMaxhp(Enemy.getMaxhp() - 35);
-        Enemy.die();
-        return damage;
-    }
+    public static void Acio() {
+        if (Wizzard.xp == 40){
+            int porket=100;
+            int find = porket -25;
+            if (find==0){
+                Boss.setMaxhp(Boss.getMaxhp()-200);
+                System.out.println("The Porket is find you can RUN..........");
+            } else {
+
+                find = find -25;
+                System.out.println("You are " +find+ "% close to Porket, be careful");
+            }
+        } else {
+            damage = Enemy.setMaxhp(Enemy.getMaxhp() - 35);
+            Enemy.die();
+        }
+        }
     public static int GryffindorSword(){
         damage = Enemy.setMaxhp(Enemy.getMaxhp() - 50);
         Enemy.die();
@@ -131,24 +131,27 @@ public class Wizzard extends Character {
     public static String getSpell() {
         return Spell;
     }
-    public static void potion() { //defend with potion
-        if (House.equals("Hufflepuff")){
-            setMaxhp(getMaxhp()+20);
-        }
-        setMaxhp(getMaxhp()+10);
+    public static void potion(int pv) { //defend with potion
         if (Wizzard.maxhp == 100) {
             System.out.println(" You can't use potion you have " + Wizzard.getMaxhp());
+        } else {
+            if (House.equals("Hufflepuff")) {
+                setMaxhp(getMaxhp() + pv * 2);
+            } else {
+                setMaxhp(getMaxhp() + pv);
+            }
         }
+
     }
 
     public static boolean Alive() {
         return Wizzard.maxhp > 0;
     }
-    public static int die(){
+    public static boolean die(){
         if (Wizzard.maxhp<=0){
             Wizzard.setMaxhp(0);
         }
-        return maxhp;
+        return true;
     }
 
     @Override

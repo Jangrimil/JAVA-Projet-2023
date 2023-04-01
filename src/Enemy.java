@@ -58,14 +58,6 @@ public class Enemy extends AbstractEnemy{
     }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-    public static void takeDamage() {
-        totaldamage += damage;
-        die();
-    }
-    public int getTotaldamage() {
-        return maxhp;
-    }
     public static int attack() {
         if (Wizzard.House.equals("Gryffindor")){
             damage = Wizzard.setMaxhp(Wizzard.getMaxhp()-5);
