@@ -1,11 +1,8 @@
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-
-
         String House = null;
         String Core_Wand = null;
         int NbWand = 0;
@@ -15,7 +12,6 @@ public class Main {
         String Name = scanner.nextLine();
         Wizzard Wizzard = new Wizzard(100, 10, Name, null, House, Core_Wand, NbWand);
         System.out.println("Hello ! " + Wizzard.getName());
-
 
         /// Define WANd of the Witcher
         do {
@@ -159,7 +155,6 @@ public class Main {
             for (Pet pet : Pet.values()) {
                 System.out.println((pet.ordinal() + 1) + " - " + pet.name());
             }
-            Scanner scP = new Scanner(System.in);
             System.out.print("Enter the number corresponding to the chosen animal : ");
             choixPet = scanner.nextInt();
 
@@ -215,7 +210,7 @@ public class Main {
                 String choose = scanner.nextLine();
                 if (choose.equals("3")) {
                     Wizzard.WingardiumLeviosa();
-                    System.out.println(" The number of hp you have left for your opponent is " + Enemy.maxhp + " hp, the remaining hp is " + Wizzard.maxhp);
+                    System.out.println(" The number of hp you have left for your opponent is " + Troll.maxhp + " hp, the remaining hp is " + Wizzard.maxhp);
                 } else if (choose.equals("2")) {
                     Wizzard.potion(10);
                     System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp());
@@ -292,7 +287,7 @@ public class Main {
                 String choose = scanner.nextLine();
                 if (choose.equals("3")) {
                     Wizzard.GryffindorSword();
-                    System.out.println(" The number of hp you have left for " + Enemy.getName() + " is " + Enemy.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
+                    System.out.println(" The number of hp you have left for " + Enemy.getName() + " is " + Basilic.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
                 } else if (choose.equals("2")) {
                     Wizzard.potion(10);
                     System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp() + "Your enemy have : " + Enemy.getMaxhp());
@@ -352,7 +347,7 @@ public class Main {
                 String choose = scanner.nextLine();
                 if (choose.equals("3")) {
                     Wizzard.Acio();
-                    System.out.println(" The number of hp you have left for " +Enemy.getName()  + " is " + Enemy.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
+                    System.out.println(" The number of hp you have left for " +Basilic.getName()  + " is " + Enemy.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
                 } else if (choose.equals("2")) {
                     Wizzard.potion(10);
                     System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp() + "Your enemy have : " + Enemy.getMaxhp());

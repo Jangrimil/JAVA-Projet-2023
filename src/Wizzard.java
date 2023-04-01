@@ -122,9 +122,5 @@ public class Wizzard extends Character {
         }
         return true;
     }
-    @Override
-    public int defend() {
-        return 0;
-    }
 }
 
