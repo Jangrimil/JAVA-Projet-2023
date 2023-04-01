@@ -1,9 +1,9 @@
 public abstract class Character {
 
     // Variables / Attributes all characters have
-    public String name;
-    public String Pet;
-    public static int maxHp, hp, xp;
+    protected String name;
+    protected String Pet;
+    protected static int maxHp, hp, xp;
 
     // Constructor for character
     public Character(String name, String Pet, int maxHp, int xp){
@@ -13,8 +13,4 @@ public abstract class Character {
         this.xp = xp;
         this.hp = maxHp;
     }
-
-
-    //methods every character has
-    public abstract int defend();
 }

@@ -184,20 +184,8 @@ public class Main {
             }
         } while (choixPet <= 0 || choixPet > 4);
         System.out.println(Wizzard);
-        //Main.checkAct();
-        //Main.getcheckAct();
-        Main.Chap7();
-        //Main.Chap2();
-        //Main.Chap3();
-
-
-        /// Spell
-
-        /// Potion
-
-        //story.printIntro --> Permet de mettre le texte ecrit dans la classe story
+        Main.Chap1();
     }
-
     public static void Combat() {
         int round = 0;
         Enemy Troll = new Enemy("Troll", 100, 50);
@@ -222,18 +210,18 @@ public class Main {
             }
             if (precisionWizzard > precisionEnemy) {
                 System.out.println("You got your attack !! : " + precisionWizzard + "%");
-                System.out.println(Wizzard.getName() + " What do you want to use ? \n spell : attack ? \n potion : defend ? \n Wingardium Leviosa(30) : spell learn ?");
+                System.out.println(Wizzard.getName() + " What do you want to use (choose number) ? \n 1 - spell \n 2 - potion \n 3 - Wingardium Leviosa(30) ?");
                 Scanner scanner = new Scanner(System.in);
                 String choose = scanner.nextLine();
-                if (choose.equals("Wingardium Leviosa")) {
+                if (choose.equals("3")) {
                     Wizzard.WingardiumLeviosa();
-                    System.out.println(" Vous avez infligez " + Enemy.maxhp + " au Troll, il vous reste " + Wizzard.maxhp);
-                } else if (choose.equals("potion")) {
+                    System.out.println(" The number of hp you have left for your opponent is " + Enemy.maxhp + " hp, the remaining hp is " + Wizzard.maxhp);
+                } else if (choose.equals("2")) {
                     Wizzard.potion(10);
                     System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp());
                 } else {
                     Wizzard.spell(10);
-                    System.out.println(" Vous avez infligez " + Enemy.maxhp + " au Troll, il vous reste " + Wizzard.maxhp);
+                    System.out.println(" the number of hp you have left for your opponent is " + Enemy.maxhp + " hp, the remaining hp is " + Wizzard.maxhp);
                 }
             } else if (precisionEnemy > precisionWizzard) {
                 System.out.println("It's the tour of your Enemy...");
@@ -299,18 +287,18 @@ public class Main {
             /////////////////////////////////////////////////////////////////////
             if (precisionWizzard > precisionEnemy) {
                 System.out.println("You got your attack !! : " + precisionWizzard + "%");
-                System.out.println(Wizzard.getName() + " What do you want to use ? \n spell : attack ? \n potion : defend ? \n items : Gryffondor Sword (50) ?");
+                System.out.println(Wizzard.getName() + " What do you want to use (choose number) ? \n 1 - spell \n 2 - potion \n 3 - items : Gryffondor Sword (50) ?");
                 Scanner scanner = new Scanner(System.in);
                 String choose = scanner.nextLine();
-                if (choose.equals("Gryffondor Sword")) {
+                if (choose.equals("3")) {
                     Wizzard.GryffindorSword();
-                    System.out.println(" Vous avez infligez " + Enemy.getMaxhp() + " au " + Enemy.getName() + " il vous reste " + Wizzard.maxhp);
-                } else if (choose.equals("potion")) {
+                    System.out.println(" The number of hp you have left for " + Enemy.getName() + " is " + Enemy.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
+                } else if (choose.equals("2")) {
                     Wizzard.potion(10);
                     System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp() + "Your enemy have : " + Enemy.getMaxhp());
                 } else {
                     Wizzard.spell(10);
-                    System.out.println(" Vous avez infligez " + Enemy.getMaxhp() + " au " + Enemy.getName() + ", il vous reste " + Wizzard.maxhp);
+                    System.out.println(" The number of hp you have left for " + Enemy.getName() + " is " + Enemy.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
                 }
             } else if (precisionEnemy > precisionWizzard) {
                 System.out.println("It's the tour of your Enemy...");
@@ -359,18 +347,18 @@ public class Main {
             /////////////////////////////////////////////////////////////////////
             if (precisionWizzard > precisionEnemy) {
                 System.out.println("You got your attack !! : " + precisionWizzard + "%");
-                System.out.println(Wizzard.getName() + " What do you want to use ? \n spell : attack ? \n potion : defend ? \n new spell : Acio (35) ?");
+                System.out.println(Wizzard.getName() + " What do you want to use (choose number) ? \n 1 - spell \n 2 - potion  \n 3 - Acio (35) ?");
                 Scanner scanner = new Scanner(System.in);
                 String choose = scanner.nextLine();
-                if (choose.equals("Acio")) {
+                if (choose.equals("3")) {
                     Wizzard.Acio();
-                    System.out.println(" Vous avez infligez " + Enemy.getMaxhp() + " au " + Enemy.getName() + " il vous reste " + Wizzard.maxhp);
-                } else if (choose.equals("potion")) {
+                    System.out.println(" The number of hp you have left for " +Enemy.getName()  + " is " + Enemy.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
+                } else if (choose.equals("2")) {
                     Wizzard.potion(10);
                     System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp() + "Your enemy have : " + Enemy.getMaxhp());
                 } else {
                     Wizzard.spell(10);
-                    System.out.println(" Vous avez infligez " + Enemy.getMaxhp() + " au " + Enemy.getName() + ", il vous reste " + Wizzard.maxhp);
+                    System.out.println(" The number of hp you have left for " + Enemy.getName() + " is " + Enemy.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
                 }
             } else if (precisionEnemy > precisionWizzard) {
                 System.out.println("It's the tour of your Enemy...");
@@ -413,14 +401,14 @@ public class Main {
                     Wizzard.setMaxhp(100);
                 }
             } else {
-                                        System.out.println("-------------------------------------");
+                        System.out.println("-------------------------------------");
                         System.out.println("To a balanced mind, death is just one more great adventure.");
                         System.out.println("-------------------------------------");
             }
         } else if (Wizzard.Alive()) {
             Wizzard.setXp(30);
             Wizzard.setMaxhp(100);
-            System.out.println("Congrat you have win ! let's go to the 3nd years of Hogwarts, But first, here is your reward : ");
+            System.out.println("Congrat you have win ! let's go to the 3nd years of Hogwarts, But first, here is your reward : 30xp + 100hp ");
             Main.Chap3();
         }
     }
@@ -468,33 +456,33 @@ public class Main {
 
                 if (chooseWizzard.equals("1")) {
                     System.out.println(" You want to attack 1st Detracker ! ");
-                    System.out.println(Wizzard.getName() + " What do you want to use ? \n spell : attack ? \n potion : defend ? \n new spell : find this one... (60) ?");
+                    System.out.println(Wizzard.getName() + " What do you want to use(choose number) ? \n 1 - spell \n 2 - potion  \n 3 - new spell : find this one... (60) ?");
                     Scanner scanner = new Scanner(System.in);
                     String choose = scanner.nextLine();
                     if (choose.equals("Expecto Patronus")) {
                         Wizzard.ExpectoPatronus();
-                        System.out.println(" Vous avez infligez " + Detracker1.getMaxhp() + " au " + Detracker1.getName() + " il vous reste " + Wizzard.maxhp);
-                    } else if (choose.equals("potion")) {
+                        System.out.println(" The number of hp you have left for " +Detracker1.getName()  + " is " + Detracker1.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
+                    } else if (choose.equals("2")) {
                         Wizzard.potion(10);
                         System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp() + "Your enemy have : " + Detracker1.getMaxhp());
                     } else {
                         Wizzard.spell(10);
-                        System.out.println(" Vous avez infligez " + Detracker1.getMaxhp() + " au " + Detracker1.getName() + ", il vous reste " + Wizzard.maxhp);
+                        System.out.println(" The number of hp you have left for " +Detracker1.getName()  + " is " + Detracker1.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
                     }
                 } else if (chooseWizzard.equals("2")) {
                     System.out.println(" You want to attack 2st Detracker ! ");
-                    System.out.println(Wizzard.getName() + " What do you want to use ? \n spell : attack ? \n potion : defend ? \n new spell : S….. (35) ?");
+                    System.out.println(Wizzard.getName() + " What do you want to use(choose number) ? \n 1 - spell \n 2 - potion  \n 3 - new spell : S….. (35) ?");
                     Scanner scanner = new Scanner(System.in);
                     String choose = scanner.nextLine();
                     if (choose.equals("Expecto Patronus")) {
                         Wizzard.ExpectoPatronus();
-                        System.out.println(" Vous avez infligez " + Detracker2.getMaxhp() + " au " + Detracker2.getName() + " il vous reste " + Wizzard.maxhp);
-                    } else if (choose.equals("potion")) {
+                        System.out.println(" The number of hp you have left for " + Detracker2.getName() + " is " + Detracker2.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
+                    } else if (choose.equals("2")) {
                         Wizzard.potion(10);
                         System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp() + "Your enemy have : " + Detracker2.getMaxhp());
                     } else {
                         Wizzard.spell(10);
-                        System.out.println(" Vous avez infligez " + Detracker2.getMaxhp() + " au " + Detracker2.getName() + ", il vous reste " + Wizzard.maxhp);
+                        System.out.println(" The number of hp you have left for " + Detracker2.getName() + " is " + Detracker2.getMaxhp() + ", hp, the remaining hp is " + Wizzard.maxhp);
                     }
                 }
             } else if (precisionEnemy1 > precisionWizzard && precisionEnemy1 > precisionEnemy2) {
@@ -504,7 +492,7 @@ public class Main {
             } else if (precisionEnemy2 > precisionWizzard && precisionEnemy2 > precisionEnemy1) {
                 System.out.println("It's the tour of your Detrackeur2...");
                 Detracker2.attack();
-                System.out.println(Detracker2.getName() + "has attacked you, you are left " + Wizzard.maxhp);
+                System.out.println(Detracker2.getName() + " has attacked you, you are left " + Wizzard.maxhp);
             } else {
                 System.out.println("Your Enemy have an advantage");
                 Random randEne = new Random();
@@ -533,7 +521,7 @@ public class Main {
                 Main.Chap3();
                 Wizzard.setMaxhp(100);
             } else {
-                                        System.out.println("-------------------------------------");
+                        System.out.println("-------------------------------------");
                         System.out.println("To a balanced mind, death is just one more great adventure.");
                         System.out.println("-------------------------------------");
             }
@@ -546,8 +534,6 @@ public class Main {
     }
 
     public static void Chap4() {
-        Wizzard.setXp(40);
-        Wizzard.setMaxhp(100);
         Spell.AddSpell();
         Combat4();
         if (Wizzard.Alive()) {
@@ -641,9 +627,9 @@ public class Main {
                 System.out.println("-------------------------------------");
             }
         } else if (Wizzard.Alive()) {
-            Wizzard.setXp(60);
+            Wizzard.setXp(50);
             Wizzard.setMaxhp(100);
-            System.out.println("Congrat you have win ! let's go to the 6nd years of Hogwarts, But first, here is your reward : 40xp + 100hp ");
+            System.out.println("Congrat you have win ! let's go to the 6nd years of Hogwarts, But first, here is your reward : 50xp + 100hp ");
             Main.Chap6();
         }
     }
@@ -668,21 +654,21 @@ public class Main {
             } else {
                 int min = 0;
                 int max = 100;
-                precisionWizzard = 100; //rand.nextInt(max - min + 1) + min;
+                precisionWizzard = rand.nextInt(max - min + 1) + min;
                 precisionEnemy = rand.nextInt(max - min + 1) + min;
             }
             //////////////////////////////////////////////////////////////
             if (precisionWizzard > precisionEnemy) {
                 System.out.println("You got your attack !! : " + precisionWizzard + "%");
-                System.out.println(Wizzard.getName() + " What do you want to use ? \n spell : attack ? \n potion : defend ? ?");
+                System.out.println(Wizzard.getName() + " What do you want to use(choose a number) ? \n 1 - spell  \n 2 - potion ?");
                 Scanner scanner = new Scanner(System.in);
                 String choose = scanner.nextLine();
-                if (choose.equals("potion")) {
+                if (choose.equals("2")) {
                     Wizzard.potion(10);
                     System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp() + "Your enemy have : " + Enemy.getMaxhp());
                 } else {
                     Wizzard.spell(20);
-                    System.out.println(" Vous avez infligez " + Enemy.getMaxhp() + " au " + Enemy.getName() + ", il vous reste " + Wizzard.maxhp);
+                    System.out.println(" The number of hp you have left for " + Enemy.getName() + " is " + Enemy.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
                 }
                 if (Dolores.getMaxhp() <= 30) {
                     System.out.println("You receive a new items : firework ");
@@ -742,13 +728,13 @@ public class Main {
                     System.out.println("Dumbledor has fallen and died you have completed your first mission with the mangemorts");
                     Wizzard.spell(300);
                 }
-                System.out.println(Wizzard.getName() + " What do you want to use ? \n 1 - spell \n 2 - potion \n 3 - spell learn ?");
+                System.out.println(Wizzard.getName() + " What do you want to use(choose a number)? \n 1 - spell \n 2 - potion \n 3 - spell learn question ?");
                 Scanner scanner = new Scanner(System.in);
                 String choose = scanner.nextLine();
-                if (choose.equals("spell")) {
+                if (choose.equals("1")) {
                     Boss.beattacked(20);
-                    System.out.println(" Vous avez infligez " + Dumbledor.getMaxhp() + " au " + Dumbledor.getName() + " il vous reste " + Wizzard.maxhp);
-                } else if (choose.equals("potion")) {
+                    System.out.println(" The number of hp you have left for  " + Dumbledor.getName() + " is " +Dumbledor.getMaxhp()  + " hp, the remaining hp is " + Wizzard.maxhp);
+                } else if (choose.equals("2")) {
                     Wizzard.potion(10);
                     System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp() + "Your enemy have : " + Dumbledor.getMaxhp());
                 } else {
@@ -842,33 +828,33 @@ public class Main {
 
                 if (chooseWizzard.equals("1")) {
                     System.out.println(" You want to attack 1st Detracker ! ");
-                    System.out.println(Wizzard.getName() + " What do you want to use ? \n spell : attack ? \n potion : defend ? \n new spell : Sectumsempra. (60) ?");
+                    System.out.println(Wizzard.getName() + " What do you want to use(choose number) ? \n 1 - spell \n 2 - potion  \n 3 - Sectumsempra. (60) ?");
                     Scanner scanner = new Scanner(System.in);
                     String choose = scanner.nextLine();
-                    if (choose.equals("Sectumsempra")) {
+                    if (choose.equals("3")) {
                         Wizzard.ExpectoPatronus();
-                        System.out.println(" Vous avez infligez " + DeathEaters1.getMaxhp() + " au " + DeathEaters1.getName() + " il vous reste " + Wizzard.maxhp);
-                    } else if (choose.equals("potion")) {
+                        System.out.println("  The number of hp you have left for "  +DeathEaters1.getName()  + " is " + DeathEaters1.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
+                    } else if (choose.equals("2")) {
                         Wizzard.potion(10);
                         System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp() + "Your enemy have : " + DeathEaters1.getMaxhp());
                     } else {
                         Wizzard.spell(10);
-                        System.out.println(" Vous avez infligez " + DeathEaters1.getMaxhp() + " au " + DeathEaters1.getName() + ", il vous reste " + Wizzard.maxhp);
+                        System.out.println("  The number of hp you have left for "  + DeathEaters1.getName() + " is " + DeathEaters1.getMaxhp() + ", hp, the remaining hp is " + Wizzard.maxhp);
                     }
                 } else if (chooseWizzard.equals("2")) {
                     System.out.println(" You want to attack 2st Detracker ! ");
-                    System.out.println(Wizzard.getName() + " What do you want to use ? \n spell : attack ? \n potion : defend ? \n new spell : Sectumsempra (35) ?");
+                    System.out.println(Wizzard.getName() + " What do you want to use(choose number) ? \n 1 - spell \n 2 - potion  \n 3 - Sectumsempra (35) ?");
                     Scanner scanner = new Scanner(System.in);
                     String choose = scanner.nextLine();
-                    if (choose.equals("Sectumsempra")) {
+                    if (choose.equals("3")) {
                         Enemy.Mangemort.Sectumsempra();
-                        System.out.println(" Vous avez infligez " + DeathEaters2.getMaxhp() + " au " + DeathEaters2.getName() + " il vous reste " + Wizzard.maxhp);
-                    } else if (choose.equals("potion")) {
+                        System.out.println("  The number of hp you have left for "  +DeathEaters2.getName()  + " is " + DeathEaters2.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
+                    } else if (choose.equals("2")) {
                         Wizzard.potion(10);
                         System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp() + "Your enemy have : " + DeathEaters2.getMaxhp());
                     } else {
                         Enemy.Mangemort.spell();
-                        System.out.println(" Vous avez infligez " + DeathEaters2.getMaxhp() + " au " + DeathEaters2.getName() + ", il vous reste " + Wizzard.maxhp);
+                        System.out.println("  The number of hp you have left for "  +DeathEaters2.getName()  + " is " + DeathEaters2.getMaxhp() + ", hp, the remaining hp is " + Wizzard.maxhp);
                     }
                 }
             } else if (precisionEnemy1 > precisionWizzard && precisionEnemy1 > precisionEnemy2) {
@@ -877,7 +863,7 @@ public class Main {
                 System.out.println(DeathEaters1.getName() + " has attacked you, you are left " + Wizzard.maxhp);
             } else if (precisionEnemy2 > precisionWizzard && precisionEnemy2 > precisionEnemy1) {
                 System.out.println("It's the tour of your Detrackeur2...");
-                DeathEaters2.attack();
+                DeathEaters2.attack(10);
                 System.out.println(DeathEaters2.getName() + "has attacked you, you are left " + Wizzard.maxhp);
             } else {
                 System.out.println("Your Enemy have an advantage");
@@ -917,8 +903,8 @@ public class Main {
             if (response.equals("y")) {
                 Combat6();
                 Wizzard.setMaxhp(100);
-            }else {
-                                            System.out.println("-------------------------------------");
+            } else {
+                        System.out.println("-------------------------------------");
                         System.out.println("To a balanced mind, death is just one more great adventure.");
                         System.out.println("-------------------------------------");
                 }
@@ -998,7 +984,7 @@ public class Main {
                                 Wizzardround = false;
                             } else { System.out.println("You can't use it in the next round");
                                 Wizzard.Expelliarmus();
-                                System.out.println(" Vous avez infligez " + Bellatrix.getMaxhp() + " au " + Bellatrix.getName() + " il vous reste " + Wizzard.maxhp);
+                                System.out.println(" The number of hp you have left for " + Bellatrix.getName() + " is " + Bellatrix.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
                                 Wizzardround = true;
                             }
                     } else if (choose.equals("2")) {
@@ -1006,7 +992,7 @@ public class Main {
                         System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp() + "Your enemy have : " + Bellatrix.getMaxhp());
                     } else {
                         Wizzard.spell(10);
-                        System.out.println(" Vous avez infligez " + Bellatrix.getMaxhp() + " au " + Bellatrix.getName() + ", il vous reste " + Wizzard.maxhp);
+                        System.out.println(" The number of hp you have left for " + Bellatrix.getName() + " is " + Bellatrix.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
                     }
                 } else if (chooseWizzard.equals("2")) {
                     System.out.println(" You want to attack Voldemort ! ");
@@ -1019,7 +1005,7 @@ public class Main {
                             Wizzardround = false;
                         } else { System.out.println("You can't use it in the next round");
                             Voldemort.beattacked(70);
-                            System.out.println(" Vous avez infligez " + Voldemort.getMaxhp() + " au " + Voldemort.getName() + " il vous reste " + Wizzard.maxhp);
+                            System.out.println("  The number of hp you have left for " + Voldemort.getName() + " is " + Voldemort.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
                             Wizzardround = true;
                         }
                     } else if (choose.equals("2")) {
@@ -1027,7 +1013,7 @@ public class Main {
                         System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp() + "Your enemy have : " + Voldemort.getMaxhp());
                     } else {
                         Boss.beattacked(10);
-                        System.out.println(" Vous avez infligez " + Voldemort.getMaxhp() + " au " + Voldemort.getName() + ", il vous reste " + Wizzard.maxhp);
+                        System.out.println(" The number of hp you have left for " + Voldemort.getName() + " is " + Voldemort.getMaxhp() + " hp, the remaining hp is " + Wizzard.maxhp);
                     }
                 }
             } else if (precisionB>precisionWizzard && precisionB>precisionV) {

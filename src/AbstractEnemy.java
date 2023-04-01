@@ -1,6 +1,6 @@
 public abstract class AbstractEnemy {
-    public String name;
-    public int maxHp, hp, xp;
+    protected String name;
+    protected int maxHp, hp, xp;
 
     // Constructor for character
     public AbstractEnemy(String name, int maxHp, int xp){
@@ -9,11 +9,8 @@ public abstract class AbstractEnemy {
         this.xp = xp;
         this.hp = maxHp;
     }
-
     //methods every character has
     public static int attack() {
-        return 0;
-    }
-
-    public abstract int defend();
+     return 0;
+  }
 }

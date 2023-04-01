@@ -2,19 +2,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Spell extends AbstractSpell {
-  public static String name;
+  private static String name;
     public Spell(String name, int damage) {
 
         super(name, damage);
         this.name = name;
-    }
-
-    public static int damage;
-    //public static String AddSpell;
-    @Override
-    public int spell() {
-        Enemy.setMaxhp(Enemy.getMaxhp()-10);
-        return 0;
     }
     private static int place=0;
     public static String[] places = {"The Philosopher's Stone", "The Chamber of Secrets", "The Prisoner of Azkaban", "The Goblet of Fire", "The Order of the Phenix", "The half-blood Prince", "The Deathly Hallows"};
@@ -71,10 +63,5 @@ public class Spell extends AbstractSpell {
             Wizzard.setSpell("expelliarmus");
             System.out.println("This is the last level of your years at Hogwarts, but after you passed, Voldemort and Bellatrix Lestrange came in person to take you down in one spell! Be careful and use Expelliarmus you've learned over the years.");
         }
-    }
-
-    @Override
-    public int spellforbiden() {
-        return 0;
     }
 }

@@ -22,7 +22,7 @@ public class Boss extends AbstractEnemy{
         }
         return damage;
     }
-
+///Wizzard attack BOSS
     public static void beattacked(int damage){
         if (Wizzard.House.equals("Slytherin")) {
             Boss.setMaxhp(Boss.getMaxhp() - 2 *damage);
@@ -30,12 +30,12 @@ public class Boss extends AbstractEnemy{
             //return damage;
 
         } else {
-            Boss.setMaxhp(Boss.getMaxhp() - damage); //10
+            Boss.setMaxhp(Boss.getMaxhp() - damage);
             Boss.die();
             //return damage;
         }
     }
-
+/////////////////////////////GETTER / SETTER//////////////////////////////////////
     public static void setCoreWand(String coreWand) {
         CoreWand = coreWand;
     }
@@ -55,9 +55,5 @@ public class Boss extends AbstractEnemy{
             Wizzard.setMaxhp(0);
         }
         return true;
-    }
-    @Override
-    public int defend() {
-        return 0;
     }
 }
