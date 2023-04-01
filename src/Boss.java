@@ -1,9 +1,9 @@
 public class Boss extends AbstractEnemy{
-    protected static double maxhp,xp;
+    protected static int maxhp,xp;
     private static String name;
     public static int damage;
     public static String CoreWand;
-    public Boss(String name, double maxhp, int xp){
+    public Boss(String name, int maxhp, int xp){
         super(name,200,50);
         this.maxhp = maxhp;
         this.xp = xp;
