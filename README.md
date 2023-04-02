@@ -5,7 +5,7 @@ CALIMOUTTOUPOULLE Cynthia
 Vous trouverez le jeu Harry Potter la dernière version sur ce main, intitulée Main2,
 Ci-dessous vous trouverez les classes créer et leur fonction :
  
-1. EXPLICATION DES CLASSES
+**1. EXPLICATION DES CLASSES**
 
 - Wizzard : cette classe contient les caractéristiques que notre utilisateur (sorcier) a, au tout début nous avons les variables utilisées pour créer le constructeur Wizzard comme son nom, sa maison, sa vie, son niveau... Il y a aussi les différents sort utilisé comme en général le sort normal appelée "spell" et les items et sorts spéciaux comme "GryffindorSword", "Expelliarmus" etc.… j'ai aussi mis des méthodes getters et setters pour pouvoir récupérer mes variables xp et maxhp.
 -  Enemy : cette classe contient ses caractéristiques comme l'attaque, son nom et son niveau. Il y a aussi la classe DeathEaters qui a les mêmes que l'ennemie car je n'arrivais pas à différencier les deux lorsque l'héros devait combattre 2 ennemies.
