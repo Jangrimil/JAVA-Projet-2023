@@ -27,7 +27,7 @@ Si le tour appartient à l'adversaire alors qui attaque à son tour l'utilisateu
 
 **3. EXPLICATION DES CHAPITRES**
 
-*- Chapitre 1 :*
+- *Chapitre 1 :*
 Le but est d'attaquer le Troll pour pouvoir passer au prochain niveau, l'attaque spécial est "Wigardium Leviosa" qui inflige un dégât de 30 HP à l'adversaire. Dans le cas où les 2 personnages ont la même précision alors ennemie a l'avantage et inflige des dégâts à l'utilisateur.
 
 - *Chapitre 2 :*
