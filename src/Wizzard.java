@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 public class Wizzard extends Character {
-    public static String Name;
-    public static String House;
-    public static int maxhp, xp, NbWand, damage;
-    public String Core_Wand, Pet;
-    public static String Spell;
+    private static String Name;
+    protected static String House;
+    private static int maxhp, xp, NbWand, damage;
+    protected String Core_Wand, Pet;
+    protected static String Spell;
     public Wizzard(int maxhp, int xp, String Name, String Pet, String House, String Core_Wand, int NbWand) {
         super(Name, Pet, 100, 10);      //name, maxHp, xp
         Wizzard.maxhp = maxhp;
@@ -28,12 +28,15 @@ public class Wizzard extends Character {
         return maxhp;
     }
 
-    public static int setMaxhp(int maxhp) {
+    protected static int setMaxhp(int maxhp) {
         Wizzard.maxhp = maxhp;
         return maxhp;
     }
+    protected static int getXp(){
+        return xp;
+    }
 
-    public static int setXp(int xp) {
+    protected static int setXp(int xp) {
         Wizzard.xp = xp;
         return xp;
     }
@@ -45,7 +48,7 @@ public class Wizzard extends Character {
 
     //          SPELL           //
 
-    public static void spell(int damage) { //attack with spell
+    protected static void spell(int damage) { //attack with spell
         if (House.equals("Slytherin")) {
             Enemy.setMaxhp(Enemy.getMaxhp() - damage*2);
             Enemy.die();
@@ -113,10 +116,10 @@ public class Wizzard extends Character {
         }
 
     }
-    public static boolean Alive() {
+    protected static boolean Alive() {
         return Wizzard.maxhp > 0;
     }
-    public static boolean die(){
+    protected static boolean die(){
         if (Wizzard.maxhp<=0){
             Wizzard.setMaxhp(0);
         }

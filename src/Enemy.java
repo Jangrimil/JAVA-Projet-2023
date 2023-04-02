@@ -1,6 +1,6 @@
 public class Enemy extends AbstractEnemy{
 
-    protected static int maxhp,xp,damage;
+    private static int maxhp,xp,damage;
     private static String name;
 
     public Enemy(String name, int maxhp, int xp) {
@@ -34,18 +34,20 @@ public class Enemy extends AbstractEnemy{
         public static int getMaxhp() {return maxhp;}
         public static String getName() {return name;}
 
-        public static int die() {
+        public static boolean die() {
             if (Mangemort.maxhp <= 0) {
                 Mangemort.setMaxhp(0);
             }
-            return maxhp;
+            return true;
         }
         public static int Sectumsempra(){
             damage = Mangemort.setMaxhp(Mangemort.getMaxhp() - 45);
+            Mangemort.die();
             return damage;
         }
         public static int spell(){
             damage = Mangemort.setMaxhp(Mangemort.getMaxhp() - 20);
+            Mangemort.die();
             return damage;
         }
     }
@@ -69,11 +71,11 @@ public class Enemy extends AbstractEnemy{
         }
         return damage;
     }
-    public static int die() {
+    public static boolean die() {
         if (Enemy.maxhp <= 0) {
             Enemy.setMaxhp(0);
         }
-        return maxhp;
+        return true;
     }
     public static boolean Alive(){
         return Enemy.maxhp > 0;

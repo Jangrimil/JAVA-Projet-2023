@@ -53,7 +53,7 @@ public class Boss extends AbstractEnemy{
     public static String getName() {return name;}
 
     public static boolean die(){
-        if (Wizzard.maxhp<=0){
+        if (Wizzard.getMaxhp()<=0){
             Wizzard.setMaxhp(0);
         }
         return true;
