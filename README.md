@@ -31,8 +31,17 @@ Chapitre 1 :
 Le but est d'attaquer le Troll pour pouvoir passer au prochain niveau, l'attaque spécial est "Wigardium Leviosa" qui inflige un dégât de 30 hp à l'adversaire. Dans le cas où les 2 personnages ont la même précision alors ennemie a l'avantage et inflige des dégâts à l'utilisateur.
 
 Chapitre 2 :
-Le but est d'attaquer le Basilic si on appartient à la maison Gryffondor on a un items et les autres ont un sort special appelée Acio qui inflige dégât de 35 hp à l'ennemie. j'ai créer deux combats séparement pour que le Gryffondor reçoit et les autres le sort. Dans le cas où les 2 personnages ont la même précision alors ennemie a l'avantage a le choix d'infliger des dégâts à l'utilisateur ou d'avoir +10hp.
+Le but est d'attaquer le Basilic si on appartient à la maison Gryffondor on a un items et les autres ont un sort special appelée Acio qui inflige dégât de 35 hp à l'ennemie. j'ai créer deux combats séparement pour que le Gryffondor reçoit et les autres le sort. Dans le cas où les 2 personnages ont la même précision alors ennemie a l'avantage et a le choix d'infliger des dégâts à l'utilisateur ou d'avoir +10hp.
 
+Chapitre 3:
+Le but est de trouver le sort Expecto Patronus, pour cela j'ai fait en sorte qu'à chaque tour où l'utilisateur a la plus haute précision alors on affiche une lettre du sort pour qu'il puisse deviner. Pour cette fois nous avons 2 enemies dans le cas où les 2 personnages ont la même précision alors les ennmies a l'avantage et de manière aléatoire le 1er peut d'infliger des dégâts à l'utilisateur et le 2ème enemie a +10hp.
 
 Chapitre 4 : 
-Le but est de s'enfuir de Voldemort
+Le but est de s'enfuir de Voldemort et Peter Pettigrow pour cela nous devons trouver le Porket. A chaque tour l'utilisateur a le choix entre Acio (qui permet de se rapproche de 25m du porket à chaque tour) et la potion. Si Voldemort a la plus haute précision alors il inflige -25 hp a l'utlisateur. Sinon Peter inflige un sort de -20hp à l'utilisateur récupère +10hp après le tour. 
+
+Chapitre 5 : 
+Le but est d'attaquer Dolores jusqu'à qu'on récupère le feu d'artifice dans l'inventaire pour pouvoir infliger une attaque de -50hp à Dolores.
+
+Chapitre 6 : 
+Le but est d'attaquer les Mangemorts mais les Serpentard ont le droit de s'allier avec les Mangemorts si il choisi ce cas de figure alors nous avons une battle entre le sorcier et Dumbledor, à chaque tour où le sorcier est plus précis il pousse du toit de 20m jusqu'à ce que Dumbledor tombe, ensuite il choisi entre "spell", "potion" ou "question spell learn" qui va poser une question une question aléatoire par rapport au sort utlisée dans les précèdents chapitre. Si 
+
