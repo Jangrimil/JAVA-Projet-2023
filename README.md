@@ -27,26 +27,26 @@ Si le tour appartient à l'adversaire alors qui attaque à son tour l'utilisateu
 
 3. EXPLICATION DES CHAPITRES 
 
-Chapitre 1 :
+- Chapitre 1 :
 Le but est d'attaquer le Troll pour pouvoir passer au prochain niveau, l'attaque spécial est "Wigardium Leviosa" qui inflige un dégât de 30 HP à l'adversaire. Dans le cas où les 2 personnages ont la même précision alors ennemie a l'avantage et inflige des dégâts à l'utilisateur.
 
-Chapitre 2 :
+- Chapitre 2 :
 Le but est d'attaquer le Basilic si on appartient à la maison Gryffondor on a un item et les autres ont un sort special appelée Acio qui inflige dégât de 35 HP à l'ennemie. j'ai créé deux combats séparément pour que le Gryffondor reçoit et les autres le sort. Dans le cas où les 2 personnages ont la même précision alors ennemie a l'avantage et a le choix d'infliger des dégâts à l'utilisateur ou d'avoir +10hp.
 
-Chapitre 3:
+- Chapitre 3:
 Le but est de trouver le sort Expecto Patronus, pour cela j'ai fait en sorte qu'à chaque tour où l'utilisateur a la plus haute précision alors on affiche une lettre du sort pour qu'il puisse deviner. Pour cette fois nous avons 2 ennemies dans le cas où les 2 personnages ont la même précision alors les ennemies a l'avantage et de manière aléatoire le 1er peut d'infliger des dégâts à l'utilisateur et le 2ème ennemie a +10hp.
 
-Chapitre 4 :
+- Chapitre 4 :
 Le but est de s'enfuir de Voldemort et Peter Pettigrow pour cela nous devons trouver le Porket. A chaque tour l'utilisateur a le choix entre Acio (qui permet de se rapproche de 25m du porket à chaque tour) et la potion. Si Voldemort a la plus haute précision alors il inflige -25 HP à l'utilisateur. Sinon Peter inflige un sort de   -20hp à l'utilisateur récupère +10hp après le tour.
 
-Chapitre 5 :
+- Chapitre 5 :
 Le but est d'attaquer Dolores jusqu'à qu'on récupère le feu d'artifice dans l'inventaire pour pouvoir infliger une attaque de -50hp à Dolores.
 
-Chapitre 6 :
+- Chapitre 6 :
 Le but est d'attaquer les Mangemorts mais les Serpentard ont le droit de s'allier avec les Mangemorts si il choisit ce cas de figure alors nous avons une battle entre le sorcier et Dumbledor, à chaque tour où le sorcier est plus précis il pousse du toit de 20m jusqu'à ce que Dumbledor tombe, ensuite il choisit entre "spell", "potion" ou "question spell learn" qui va poser une question une question aléatoire par rapport au sort utilisée dans les précédents chapitre. Si sa réponse est bonne il inflige des dégâts avec le sort répondu sinon il passe son tour. Dans le cas où les 2 personnages ont la même précision alors ennemie a l'avantage et a le choix d'infliger des dégâts à l'utilisateur ou d'avoir +10hp.
 Pour les autres, vous attaquez les 2 Mangemorts et vous avez un nouveau sort appelé "Sectumsempra". Vous avez le choix sur qui vous voulez attaquer et lui infligez les dégâts.
 
-Chapitre 7 :
+- Chapitre 7 :
 Vous êtes face à Voldemort et Bellatrix Lestrange, votre but est de tuer Voldemort. Pour contrer l'attaque mortel de Voldemort vous devez utiliser Expelliarmus, vous ne pouvez pas l'utiliser dans le prochain tour si vous l'avez utilisé. Si le tour est pour Voldemort, l'utilisateur doit choisir un nombre entre 1 à 6, s'il choisit 6 alors Voldemort utilise son ultime sort sinon il vous attaque avec 20 HP de dégât. Dans le cas où les 2 personnages ont la même précision alors l'utilisateur a l'avantage est récupère +50hp.
  
 
