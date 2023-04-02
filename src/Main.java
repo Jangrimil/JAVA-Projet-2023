@@ -21,8 +21,6 @@ public class Main {
             } while (NbWand <= 1);
         } while (NbWand >= 9);
 
-        //Core[] TypeWand = Core.values();
-        //Core core = Core.Core;
         System.out.println("What is your preference ? :\n");
         for (Core core : Core.values()) {
             System.out.println((core.ordinal() + 1) + " - " + core.name());
@@ -32,7 +30,6 @@ public class Main {
         Scanner Wand = new Scanner(System.in);
         int choix = Wand.nextInt();
 
-        // Convertir le choix de l'utilisateur en une instance de l'énumération correspondante
         Core corechoix = Core.values()[choix - 1];
 
         if (corechoix == Core.Phoenix_feather) {
@@ -43,7 +40,6 @@ public class Main {
             Core_Wand = "Dragon Heather";
             Wand WizzardWand = new Wand(Core_Wand, NbWand);
             System.out.println("Information about your Wang : ELEMENT = " + WizzardWand.getCore_Wang() + " and LENGTH : " + WizzardWand.getNbWand());
-            //Wizzard = Wizzard(Name, Pet, House, Core_Wand, NbWand);
         }
 
         // Define House of Wizzard
@@ -130,22 +126,18 @@ public class Main {
             House = "Ravenclaw";
             SortingHat HouseWizzard = new SortingHat(House, 1.5f, 1, 1, 1);
             System.out.println("You belong to " + HouseWizzard.getHouse() + " House\nNotable members include Luna Lovegood, Gilderoy Lockhart and Filius Flitwick.\n\n‘Or yet in wise old Ravenclaw\nIf you’ve a ready mind\nWhere those of wit and learning\nWill always find their kind.’\nHarry Potter and the Philosopher’s Stone");
-            //Wizzard = Wizzard(Name, null, House, Core_Wand, NbWand);
         } else if (countB > countA && countB > countC && countB > countD) {
             House = "Slytherin";
             SortingHat HouseWizzard = new SortingHat(House, 1, 1.5f, 1, 1);
             System.out.println("You belong to " + HouseWizzard.getHouse() + " House\nNotable members include Severus Snape, Draco Malfoy and (rather unfortunately) Lord Voldemort.\n\n‘Or perhaps in Slytherin\nYou’ll make your real friends\nThose cunning folk use any means\nTo achieve their ends.’\nHarry Potter and the Philosopher’s Stone");
-            //Wizzard = Wizzard(Name, null, House, Core_Wand, NbWand);
         } else if (countC > countA && countC > countB && countC > countD) {
             House = "Gryffindor";
             SortingHat HouseWizzard = new SortingHat(House, 1, 1, 1.5f, 1);
             System.out.println("You belong to " + HouseWizzard.getHouse() + " House\nNotable members include (of course) Harry Potter, Hermione Granger and Ron Weasley.\n\n‘You might belong in Gryffindor,\nWhere dwell the brave at heart,\nTheir daring, nerve and chivalry\nSet Gryffindors apart.’\nHarry Potter and the Philosopher’s Stone");
-            //Wizzard = Wizzard(Name, null, House, Core_Wand, NbWand);
         } else {
             House = "Hufflepuff";
             SortingHat HouseWizzard = new SortingHat(House, 1, 1, 1, 1.5f);
             System.out.println("You belong to " + HouseWizzard.getHouse() + " House\nNotable members include Newt Scamander, Cedric Diggory and Nymphadora Tonks.\n\n‘You might belong in Hufflepuff\nWhere they are just and loyal\nThose patient Hufflepuffs are true\nAnd unafraid of toil.’\nHarry Potter and the Philosopher’s Stone <3");
-            //Wizzard = Wizzard(Name, null, House, Core_Wand, NbWand);
         }
 
         /// Pet
@@ -711,7 +703,7 @@ public class Main {
             int precisionDumbledor = 0;
             int min = 0;
             int max = 100;
-            precisionWizzard = 100; //rand.nextInt(max - min + 1) + min;
+            precisionWizzard = rand.nextInt(max - min + 1) + min;
             precisionDumbledor = rand.nextInt(150 - 10 + 1) + 10;
             /////////////////////////////////////////////////////////////////////
             if (precisionWizzard > precisionDumbledor) {
