@@ -43,5 +43,10 @@ Chapitre 5 :
 Le but est d'attaquer Dolores jusqu'à qu'on récupère le feu d'artifice dans l'inventaire pour pouvoir infliger une attaque de -50hp à Dolores.
 
 Chapitre 6 : 
-Le but est d'attaquer les Mangemorts mais les Serpentard ont le droit de s'allier avec les Mangemorts si il choisi ce cas de figure alors nous avons une battle entre le sorcier et Dumbledor, à chaque tour où le sorcier est plus précis il pousse du toit de 20m jusqu'à ce que Dumbledor tombe, ensuite il choisi entre "spell", "potion" ou "question spell learn" qui va poser une question une question aléatoire par rapport au sort utlisée dans les précèdents chapitre. Si 
+Le but est d'attaquer les Mangemorts mais les Serpentard ont le droit de s'allier avec les Mangemorts si il choisi ce cas de figure alors nous avons une battle entre le sorcier et Dumbledor, à chaque tour où le sorcier est plus précis il pousse du toit de 20m jusqu'à ce que Dumbledor tombe, ensuite il choisi entre "spell", "potion" ou "question spell learn" qui va poser une question une question aléatoire par rapport au sort utlisée dans les précèdents chapitre. Si sa réponse est bonne il inflige des dégats avec le sort répondu sinon il passe son tour. Dans le cas où les 2 personnages ont la même précision alors ennemie a l'avantage et a le choix d'infliger des dégâts à l'utilisateur ou d'avoir +10hp.
+
+Pour les autres, vous attaquez les 2 Mangemorts et vous avez un nouveau sort appelée "Sectumsempra". Vous avez le choix sur qui vous voulez attaquer et lui infligez les dégats. 
+
+Chapitre 7 :
+Vous êtes face à Voldemort et Bellatrix Lestrange, votre but est de tuer Voldemort. Pour contrer l'attaque mortel de Voldemort vous devez utilisez Expelliarmus, vous ne pouvez pas l'utiliser dans le prochain tour si vous l'avez utiliser. Si le tour est pour Voldemort, l'utilisateur doit choisir un nommbre entre 1 à 6, s'il choisi 6 alors Voldemort utilise son ultime sort sinon il vous attaque avec 20 hp de dégat. Dans le cas où les 2 personnages ont la même précision alors l'utilisateur a l'avantage est récupère +50hp.
 
