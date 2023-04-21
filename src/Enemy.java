@@ -1,6 +1,10 @@
+import java.io.PrintStream;
+
 public class Enemy extends AbstractEnemy{
 
-    private static int maxhp,xp,damage;
+    public int maxhp;
+    private int xp;
+    private static int damage;
     private static String name;
 
     public Enemy(String name, int maxhp, int xp) {
@@ -9,50 +13,6 @@ public class Enemy extends AbstractEnemy{
         this.maxhp = maxhp;
         this.xp = xp;
     }
-///////////////////////////////////////////////////DeathEaters CLASS////////////////////////////////////////////
-    public static class Mangemort extends AbstractEnemy{
-        private static int maxhp,xp;
-        private static String name;
-        public Mangemort(String name, int maxhp, int xp){
-            super(name,100,50);
-            this.name = name;
-            this.maxhp = maxhp;
-            this.xp = xp;
-    }
-        public static boolean Alive(){return Mangemort.maxhp > 0;}
-        public static int attack(int damage) {
-            if (Wizzard.House.equals("Gryffindor")){
-                damage = Wizzard.setMaxhp(Wizzard.getMaxhp()-damage);
-                Wizzard.die();
-            }
-            else {damage = Wizzard.setMaxhp(Wizzard.getMaxhp()-damage);
-                Wizzard.die();
-            }
-            return damage;
-        }
-        public static int setMaxhp(int maxhp) {Mangemort.maxhp = maxhp; return maxhp;}
-        public static int getMaxhp() {return maxhp;}
-        public static String getName() {return name;}
-
-        public static boolean die() {
-            if (Mangemort.maxhp <= 0) {
-                Mangemort.setMaxhp(0);
-            }
-            return true;
-        }
-        public static int Sectumsempra(){
-            damage = Mangemort.setMaxhp(Mangemort.getMaxhp() - 45);
-            Mangemort.die();
-            return damage;
-        }
-        public static int spell(){
-            damage = Mangemort.setMaxhp(Mangemort.getMaxhp() - 20);
-            Mangemort.die();
-            return damage;
-        }
-    }
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     public static int attack() {
         if (Wizzard.House.equals("Gryffindor")){
             damage = Wizzard.setMaxhp(Wizzard.getMaxhp()-5);
@@ -71,22 +31,83 @@ public class Enemy extends AbstractEnemy{
         }
         return damage;
     }
-    public static boolean die() {
-        if (Enemy.maxhp <= 0) {
-            Enemy.setMaxhp(0);
+    public boolean die() {
+        if (getMaxhp() <= 0) {
+            setMaxhp(0);
         }
         return true;
     }
-    public static boolean Alive(){
-        return Enemy.maxhp > 0;
+    public boolean Alive(){
+        return getMaxhp() > 0;
+    }
+
+    protected void spell(int damage) { //attack with spell
+        if (Wizzard.House.equals("Slytherin")) {
+            setMaxhp(getMaxhp() - damage*2);
+            die();
+        } else {
+            setMaxhp(getMaxhp() - damage);
+            die();
+        }
+    }
+
+    protected void firework(int damage){
+        damage = setMaxhp(getMaxhp())-damage;
+        die();
+    }
+    public int WingardiumLeviosa() {
+        damage = setMaxhp(getMaxhp() - 30);
+        die();
+        return damage;
+    }
+
+    public void Acio() {
+        if (Wizzard.getXp() == 40){
+            int porket=100;
+            int find = porket -25;
+            if (find==0){
+                Boss.setMaxhp(Boss.getMaxhp()-200);
+                System.out.println("The Porket is find you can RUN..........");
+            } else {
+
+                find = find -25;
+                System.out.println("You are " +find+ "% close to Porket, be careful");
+            }
+        } else {
+            damage = setMaxhp(getMaxhp() - 35);
+            die();
+        }
+    }
+
+    public int GryffindorSword(){
+        damage = setMaxhp(getMaxhp() - 50);
+        die();
+        return damage;
+    }
+    public int ExpectoPatronus(){
+        damage = setMaxhp(getMaxhp() - 60);
+        die();
+        return damage;
+    }
+
+    public int Expelliarmus(){
+        damage = setMaxhp(getMaxhp() - 70);
+        setMaxhp(getMaxhp()+20);
+        die();
+        return damage;
+    }
+    public int Sectumsempra(){
+        damage = setMaxhp(getMaxhp() - 45);
+        die();
+        return damage;
     }
 
     //Getter / Setter
-    public static int setMaxhp(int maxhp) {
-        Enemy.maxhp = maxhp;
+    public int setMaxhp(int maxhp) {
+        this.maxhp = maxhp;
         return maxhp;
     }
-    public static int getMaxhp() {
+    public int getMaxhp() {
         return maxhp;
     }
     public static String getName() {

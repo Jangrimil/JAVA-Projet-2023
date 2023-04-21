@@ -46,61 +46,10 @@ public class Wizzard extends Character {
         return House;
     }
 
-    //          SPELL           //
-
-    protected static void spell(int damage) { //attack with spell
-        if (House.equals("Slytherin")) {
-            Enemy.setMaxhp(Enemy.getMaxhp() - damage*2);
-            Enemy.die();
-        } else {
-            Enemy.setMaxhp(Enemy.getMaxhp() - damage);
-            Enemy.die();
-        }
-    }
-    protected static void firework(int damage){
-        damage = Enemy.setMaxhp(Enemy.getMaxhp())-damage;
-        Enemy.die();
-    }
-    public static int WingardiumLeviosa() {
-        damage = Enemy.setMaxhp(Enemy.getMaxhp() - 30);
-        Enemy.die();
-        return damage;
-
-    }
-    public static void Acio() {
-        if (Wizzard.xp == 40){
-            int porket=100;
-            int find = porket -25;
-            if (find==0){
-                Boss.setMaxhp(Boss.getMaxhp()-200);
-                System.out.println("The Porket is find you can RUN..........");
-            } else {
-
-                find = find -25;
-                System.out.println("You are " +find+ "% close to Porket, be careful");
-            }
-        } else {
-            damage = Enemy.setMaxhp(Enemy.getMaxhp() - 35);
-            Enemy.die();
-        }
-        }
-    public static int GryffindorSword(){
-        damage = Enemy.setMaxhp(Enemy.getMaxhp() - 50);
-        Enemy.die();
-        return damage;
-    }
-    public static int ExpectoPatronus(){
-        damage = Enemy.setMaxhp(Enemy.getMaxhp() - 60);
-        Enemy.die();
-        return damage;
+    public static void setHouse(String house) {
+        House = house;
     }
 
-    public static int Expelliarmus(){
-        damage = Enemy.setMaxhp(Enemy.getMaxhp() - 70);
-        setMaxhp(getMaxhp()+20);
-        Enemy.die();
-        return damage;
-    }
     public static void setSpell(String spell) {
         Spell = spell;
     }
