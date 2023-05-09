@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="880.0" prefWidth="589.0" styleClass="bodywitcher" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.HelloController">
+   <children>
+      <Label fx:id="labelWand" alignment="CENTER" contentDisplay="CENTER" layoutX="187.0" layoutY="-8.0" prefHeight="49.0" prefWidth="397.0" text="SortingHat Quizz" textAlignment="CENTER" underline="true">
+         <opaqueInsets>
+            <Insets left="50.0" right="50.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets top="25.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.26726973056793213" blue="0.21381579339504242" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9078947305679321" green="0.046235378831624985" blue="0.046235378831624985" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="myLabel1" alignment="CENTER" contentDisplay="CENTER" layoutX="42.0" layoutY="49.0" prefHeight="53.0" prefWidth="596.0" text="1. Which of the following options would you most like to study?" textAlignment="CENTER">
+         <opaqueInsets>
+            <Insets left="50.0" right="50.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets top="25.0" />
+         </padding>
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.26726973056793213" blue="0.21381579339504242" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9078947305679321" green="0.046235378831624985" blue="0.046235378831624985" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="myLabel11" alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="280.0" prefHeight="53.0" prefWidth="759.0" text="2. If given the choice, you would prefer to invent a potion that would guarantee" textAlignment="CENTER">
+         <opaqueInsets>
+            <Insets left="50.0" right="50.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets top="25.0" />
+         </padding>
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.26726973056793213" blue="0.21381579339504242" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9078947305679321" green="0.046235378831624985" blue="0.046235378831624985" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <VBox layoutX="54.0" layoutY="93.0" prefHeight="164.0" prefWidth="134.0">
+         <children>
+            <RadioButton fx:id="A1" mnemonicParsing="false" text="A">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </RadioButton>
+            <Label text="Mermaids">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Separator prefWidth="200.0" />
+            <RadioButton fx:id="B1" mnemonicParsing="false" prefHeight="5.0" prefWidth="53.0" text="B">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </RadioButton>
+            <Label text="Werewolves" />
+            <Separator prefWidth="200.0" />
+            <RadioButton fx:id="C1" mnemonicParsing="false" text="C">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </RadioButton>
+            <Label text="Vampires" />
+            <Separator prefWidth="200.0" />
+            <RadioButton fx:id="D1" mnemonicParsing="false" text="D">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </RadioButton>
+            <Label text="Goblins" />
+            <Separator prefWidth="200.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="51.0" layoutY="343.0" prefHeight="164.0" prefWidth="134.0">
+         <children>
+            <RadioButton fx:id="A2" mnemonicParsing="false" text="A">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </RadioButton>
+            <Label text="WISDOM">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Separator prefWidth="200.0" />
+            <RadioButton fx:id="B2" mnemonicParsing="false" prefHeight="5.0" prefWidth="53.0" text="B">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </RadioButton>
+            <Label text="FAME" />
+            <Separator prefWidth="200.0" />
+            <RadioButton fx:id="C2" mnemonicParsing="false" text="C">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </RadioButton>
+            <Label text="BRAVE" />
+            <Separator prefWidth="200.0" />
+            <RadioButton fx:id="D2" mnemonicParsing="false" text="D">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </RadioButton>
+            <Label text="LOVE" />
+            <Separator prefWidth="200.0" />
+         </children>
+      </VBox>
+      <Label fx:id="myLabel111" alignment="CENTER" contentDisplay="CENTER" layoutX="51.0" layoutY="538.0" prefHeight="53.0" prefWidth="678.0" text="3. Four cups are placed in front of you. Which one do you choose to drink from?" textAlignment="CENTER">
+         <opaqueInsets>
+            <Insets left="50.0" right="50.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets top="25.0" />
+         </padding>
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.26726973056793213" blue="0.21381579339504242" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9078947305679321" green="0.046235378831624985" blue="0.046235378831624985" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <VBox layoutX="51.0" layoutY="598.0" prefHeight="195.0" prefWidth="540.0">
+         <children>
+            <RadioButton fx:id="A3" mnemonicParsing="false" text="A">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </RadioButton>
+            <Label prefHeight="20.0" prefWidth="549.0" text="The thick, creamy, rich purple drink with a delicious smell of chocolate and plums.">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Separator prefWidth="200.0" />
+            <RadioButton fx:id="B3" mnemonicParsing="false" prefHeight="5.0" prefWidth="53.0" text="B">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </RadioButton>
+            <Label text="The mysterious black liquid that glows like ink and gives off fumes that make you see strange things." />
+            <Separator prefWidth="200.0" />
+            <RadioButton fx:id="C3" mnemonicParsing="false" text="C">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </RadioButton>
+            <Label text="The frothy, foamy, silvery liquid that shines as if it contains ground diamonds." />
+            <Separator prefWidth="200.0" />
+            <RadioButton fx:id="D3" mnemonicParsing="false" text="D">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </RadioButton>
+            <Label text="The golden liquid so bright it hurts the eye, and makes sunspots dance all over the room." />
+            <Separator prefWidth="200.0" />
+         </children>
+      </VBox>
+      <Button fx:id="ButtonHat" layoutX="42.0" layoutY="823.0" mnemonicParsing="false" onAction="#onHouseButtonClick" text="Result" />
+      <Label fx:id="labelWand1" alignment="CENTER" contentDisplay="CENTER" layoutX="133.0" layoutY="794.0" prefHeight="59.0" prefWidth="300.0" text="The SortingHat gave you..." textAlignment="CENTER">
+         <opaqueInsets>
+            <Insets left="50.0" right="50.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets top="25.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.26726973056793213" blue="0.21381579339504242" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9078947305679321" green="0.046235378831624985" blue="0.046235378831624985" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <VBox layoutX="427.0" layoutY="787.0" prefHeight="93.0" prefWidth="344.0">
+         <children>
+            <Label fx:id="labelHat" alignment="CENTER" contentDisplay="CENTER" prefHeight="59.0" prefWidth="347.0" text="?">
+               <opaqueInsets>
+                  <Insets left="50.0" />
+               </opaqueInsets>
+               <font>
+                  <Font name="System Bold Italic" size="23.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.8684210777282715" green="0.028143275529146194" blue="0.028143275529146194" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.7699074149131775" blue="0.013888888992369175" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Button fx:id="nextscene" mnemonicParsing="false" onAction="#onNextSceneButtonClick" text="Next" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

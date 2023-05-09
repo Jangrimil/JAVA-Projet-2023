@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="bodywitcher" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.HelloController">
+   <children>
+      <VBox layoutX="109.0" layoutY="100.0" prefHeight="200.0" prefWidth="383.0">
+         <children>
+            <Label fx:id="myLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="9.0" prefWidth="383.0" text="Enter your name" textAlignment="CENTER">
+               <opaqueInsets>
+                  <Insets left="50.0" right="50.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="25.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.34210526943206787" green="0.26726973056793213" blue="0.21381579339504242" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9078947305679321" green="0.046235378831624985" blue="0.046235378831624985" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <TextField fx:id="myTextField" alignment="CENTER" prefHeight="49.0" prefWidth="355.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TextField>
+            <Button fx:id="myButtonOk" mnemonicParsing="false" onAction="#onMyOkButtonClick" text="OK" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

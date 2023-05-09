@@ -1,0 +1,18 @@
+.bodystart{
+-fx-background-image:url("img/hp_start.png");
+-fx-background-size:cover;
+}
+
+.bodywitcher{
+-fx-background-image:url("img/background_witcher.png");
+-fx-background-size:cover;
+}
+
+.bodyfight{
+-fx-background-image:url("img/hp_fight.jpg");
+-fx-background-size:cover;
+}
+
+.VboxFight{
+-fx-background-color: #585858;
+}
