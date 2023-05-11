@@ -290,16 +290,33 @@ public class HelloController {
     private Enemy troll;
     private int round;
 
-    public void initialize() {
+    public void initialize(ActionEvent event) throws IOException {
         wizzard = new Wizzard(100, 10, name,pet,House,Wand,wandS);
         troll = new Enemy("Troll", 100, 50);
         round = 0;
 
         updateLabels();
         combat();
+        if (!Wizzard.Alive()) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("gameover.fxml"));
+            Parent root = loader.load();
+            Scene Scene6 = new Scene(root);
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.setScene(Scene6);
+            stage.show();
+        } else if (Wizzard.Alive()) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("win.fxml"));
+            Parent root = loader.load();
+            Scene Scene7 = new Scene(root);
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.setScene(Scene7);
+            stage.show();
+        }
     }
 
-    private void combat() {
+    private void combat(){
         Enemy Troll = new Enemy("Troll", 100, 50);
         int round = 0;
         do {
@@ -321,34 +338,23 @@ public class HelloController {
             }
             if (precisionWizzard > precisionEnemy) {
                 labelPrecision.setText("You got your attack !! : " + precisionWizzard + "%");
-                labelPrecision.setText(Wizzard.getName() + " What do you want to use (choose number) ?");
-                Scanner scanner = new Scanner(System.in);
-                String choose = scanner.nextLine();
-                if (choose.equals("3")) {
-                    Troll.WingardiumLeviosa();
-                    System.out.println(" The number of hp you have left for your opponent is " + Troll.getMaxhp() + " hp, the remaining hp is " + Wizzard.getMaxhp());
-                } else if (choose.equals("2")) {
-                    Wizzard.potion(10);
-                    System.out.println(" You have choose to take a potion you have : " + Wizzard.getMaxhp());
-                } else {
-                    Troll.spell(10);
-                    System.out.println(" the number of hp you have left for your opponent is " + Troll.getMaxhp() + " hp, the remaining hp is " + Wizzard.getMaxhp());
-                }
+                labelPrecision.setText(Wizzard.getName() + " What do you want to use (choose button) ?");
+
+
             } else if (precisionEnemy > precisionWizzard) {
-                System.out.println("It's the tour of your Enemy...");
-                Enemy.attack();
-                Wizzard.setMaxhp(Wizzard.getMaxhp());
-                System.out.println("Enemy has attacked you, you are left " + Wizzard.getMaxhp());
+                labelPrecision.setText("It's the tour of your Enemy...");
+                troll.attack();
+                wizzard.setMaxhp(wizzard.getMaxhp());
+                updateLabels();
             } else {
-                System.out.println("Your Enemy have an advantage");
+                labelPrecision.setText("Your Enemy have an advantage");
                 Enemy.attack();
                 Wizzard.setMaxhp(Wizzard.getMaxhp());
-                System.out.println("Enemy has attacked you, you are left " + Wizzard.getMaxhp());
+                updateLabels();
             }
 
         } while (Troll.Alive() && Wizzard.Alive());
-        // Replace 'System.out.println()' with appropriate JavaFX UI updates
-        // Remove Scanner and update the code to use JavaFX UI elements
+
     }
 
     private void updateLabels() {
@@ -359,16 +365,22 @@ public class HelloController {
 
     @FXML
     private void onSpellButtonClick() {
+        troll.WingardiumLeviosa();
+        updateLabels();
         // Handle spell button click
     }
 
     @FXML
     private void onPotionButtonClick() {
+        wizzard.potion(10);
+        updateLabels();
         // Handle potion button click
     }
 
     @FXML
     private void onSpecialButtonClick() {
+        troll.spell(10);
+        updateLabels();
         // Handle special spell button click
     }
 }
